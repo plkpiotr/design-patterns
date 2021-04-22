@@ -22,6 +22,5 @@ export class AppComponent {
     jeweller.wear();
     const clothingStore = new ClothingStore(jeweller);
     clothingStore.wear();
-    // we don't use Shop class and we can create a wrapper for client logic
   }
 }
