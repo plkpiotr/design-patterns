@@ -1,0 +1,35 @@
+@startuml
+
+interface Person {
+  wear(): void
+}
+
+class Woman {
+  + wear(): void
+}
+
+class Shop {
+  - person: Person
+  + wear(): void
+}
+
+class Jeweller {
+  + wear(): void
+}
+
+class ClothingStore {
+  + wear(): void
+}
+
+Person <|- Woman
+Person --o Shop
+Person <|-- Shop
+
+Shop <|-- Jeweller
+Shop <|-- ClothingStore
+
+@enduml
+
+' We don't use Shop class in client code
+' We can create a wrapper for client logic
+' We can add private functions inside decorators
