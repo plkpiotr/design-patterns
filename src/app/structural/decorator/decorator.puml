@@ -30,6 +30,6 @@ Shop <|-- ClothingStore
 
 @enduml
 
-' We don't use Shop class in client code
-' We can create a wrapper for client logic
-' We can add private functions inside decorators
+' We don't need use non-concrete decorator class (Shop) in client code
+' We can add private functions inside concrete decorators
+' We can create a wrapper for client logic (with Person type argument)

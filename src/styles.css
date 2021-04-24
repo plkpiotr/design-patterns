@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Netrunner theme:
+* {
+  meta: #AA8866;
+  keyword: #F92672;
+  parameter: #FD971F;
+  string: #E6DB74;
+  function-global: #DDFFBB;
+  function: #A6E22E;
+  character: #68DBA9;
+  class: #66D9EF;
+  interface: #3388FF;
+  type: #507874;
+  variable: #AE81FF;
+  number: #FF9999;
+  variable-global: #FFBBFF;
+  plain: #f8f8f2;
+}
+*/

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Woman } from './creational/decorator/woman.class';
-import { Jeweller } from './creational/decorator/jeweller.class';
-import { ClothingStore } from './creational/decorator/clothing-store.class';
+import { Woman } from './structural/decorator/woman.class';
+import { Jeweller } from './structural/decorator/jeweller.class';
+import { ClothingStore } from './structural/decorator/clothing-store.class';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,11 @@ export class AppComponent {
 
   constructor() {
     AppComponent.presentDecorator();
+    AppComponent.presentBuilder();
+  }
+
+  private static presentBuilder(): void {
+    // TODO: Implementation
   }
 
   private static presentDecorator(): void {
