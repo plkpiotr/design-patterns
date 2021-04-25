@@ -1,4 +1,4 @@
-import { Shop } from './salesman.class';
+import { Shop } from './shop.class';
 
 export class Jeweller extends Shop {
   public wear(): void {

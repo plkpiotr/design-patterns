@@ -21,9 +21,9 @@ class ClothingStore {
   + wear(): void
 }
 
-Person <|- Woman
+Person <|. Woman
 Person --o Shop
-Person <|-- Shop
+Person <|.. Shop
 
 Shop <|-- Jeweller
 Shop <|-- ClothingStore
