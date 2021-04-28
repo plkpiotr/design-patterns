@@ -4,6 +4,9 @@ import { Jeweller } from './structural/decorator/jeweller.class';
 import { ClothingStore } from './structural/decorator/clothing-store.class';
 import { Foreman } from './creational/builder/foreman.class';
 import { ConstructionCrew } from './creational/builder/construction-crew.class';
+import { Route } from './behavioral/strategy/route.class';
+import { FastestRoute } from './behavioral/strategy/fastest-route.class';
+import { ShortestRoute } from './behavioral/strategy/shortest-route.class';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,7 @@ export class AppComponent {
   constructor() {
     AppComponent.presentBuilder();
     AppComponent.presentDecorator();
+    AppComponent.presentStrategy();
   }
 
   private static presentBuilder(): void {
@@ -43,5 +47,13 @@ export class AppComponent {
 
     const clothingStore = new ClothingStore(jeweller);
     clothingStore.wear();
+  }
+
+  private static presentStrategy(): void {
+    const route = new Route(new FastestRoute());
+    route.findRouteToRome('Warsaw');
+
+    route.setStrategy(new ShortestRoute());
+    route.findRouteToRome('Paris');
   }
 }

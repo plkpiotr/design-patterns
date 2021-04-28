@@ -1,4 +1,4 @@
-# <a name="list">Design patterns in TypeScript</a>
+# <a name="list">Design patterns implemented in TypeScript</a>
 
 | Creational | Structural | Behavioral |
 | :----: | :----: | :----: |
@@ -55,7 +55,7 @@
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116004525-5bc9da00-a603-11eb-8326-be829c2c53f1.png)
+![builder](https://user-images.githubusercontent.com/21959354/116450819-0d634800-a85c-11eb-9ea7-5231fbd1d75b.png)
 
 #### Client code:
 
@@ -115,7 +115,7 @@ constructionCrew.putHouseIntoUse().showEquipments();
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116004520-57052600-a603-11eb-9d84-f5417c2f2bec.png)
+![decorator](https://user-images.githubusercontent.com/21959354/116450831-0fc5a200-a85c-11eb-86e5-bebc85dc19dc.png)
 
 #### Client code:
 
@@ -266,12 +266,16 @@ clothingStore.wear();
 
 #### UML diagram:
 
-![strategy](localhost:4200)
+![strategy](https://user-images.githubusercontent.com/21959354/116450815-0a685780-a85c-11eb-8f61-63e4bece202c.png)
 
 #### Client code:
 
 ```ts
+const route = new Route(new FastestRoute());
+route.findRouteToRome('Warsaw');
 
+route.setStrategy(new ShortestRoute());
+route.findRouteToRome('Paris');
 ```
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)

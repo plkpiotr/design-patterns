@@ -1,3 +1,30 @@
 @startuml
 
+interface Strategy {
+  findRoute(start: string, destination: string): void
+}
+
+class Route {
+  - strategy: Strategy
+  constructor(private strategy: Strategy)
+  + setStrategy(strategy: Strategy): void
+  + findRouteToRome(from: string): void
+}
+
+class FastestRoute {
+  + findRoute(start: string, destination: string): void
+}
+
+class ShortestRoute {
+  + findRoute(start: string, destination: string): void
+}
+
+Strategy <-o Route
+
+Strategy <|.. FastestRoute
+Strategy <|.. ShortestRoute
+
 @enduml
+
+' findRouteToRome() may be client logic
+' arguments of findRoute() functions are input data for concrete strategies

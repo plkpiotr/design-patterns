@@ -1,6 +1,6 @@
 @startuml
 
-interface Person {
+interface Customer {
   wear(): void
 }
 
@@ -9,7 +9,8 @@ class Woman {
 }
 
 class Shop {
-  - person: Person
+  - customer: Customer
+  constructor(private customer: Customer)
   + wear(): void
 }
 
@@ -21,9 +22,9 @@ class ClothingStore {
   + wear(): void
 }
 
-Person <|. Woman
-Person --o Shop
-Person <|.. Shop
+Customer <|. Woman
+Customer <--o Shop
+Customer <|.. Shop
 
 Shop <|-- Jeweller
 Shop <|-- ClothingStore
@@ -32,4 +33,4 @@ Shop <|-- ClothingStore
 
 ' We don't need use non-concrete decorator class (Shop) in client code
 ' We can add private functions inside concrete decorators
-' We can create a wrapper for client logic (with Person type argument)
+' We can create a wrapper for client logic (with Customer type argument)

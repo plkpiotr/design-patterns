@@ -1,7 +1,7 @@
-import { Person } from './person.interface';
+import { Customer } from './customer.interface';
 
-export class Shop implements Person {
-  constructor(private client: Person) {}
+export class Shop implements Customer {
+  constructor(private client: Customer) {}
 
   public wear(): void {
     this.client.wear();
