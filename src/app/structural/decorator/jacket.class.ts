@@ -1,6 +1,6 @@
-import { Shop } from './shop.class';
+import { Clothing } from './clothing.class';
 
-export class ClothingStore extends Shop {
+export class Jacket extends Clothing {
   public wear(): void {
     super.wear();
     console.error('wear a jacket');

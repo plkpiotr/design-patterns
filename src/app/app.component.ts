@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Woman } from './structural/decorator/woman.class';
-import { Jeweller } from './structural/decorator/jeweller.class';
-import { ClothingStore } from './structural/decorator/clothing-store.class';
+import { Scarf } from './structural/decorator/scarf.class';
+import { Jacket } from './structural/decorator/jacket.class';
 import { Foreman } from './creational/builder/foreman.class';
 import { ConstructionCrew } from './creational/builder/construction-crew.class';
 import { Route } from './behavioral/strategy/route.class';
@@ -42,10 +42,10 @@ export class AppComponent {
     const woman = new Woman();
     woman.wear();
 
-    const jeweller = new Jeweller(woman);
+    const jeweller = new Scarf(woman);
     jeweller.wear();
 
-    const clothingStore = new ClothingStore(jeweller);
+    const clothingStore = new Jacket(jeweller);
     clothingStore.wear();
   }
 
