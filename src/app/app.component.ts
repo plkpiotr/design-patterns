@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Woman } from './structural/decorator/woman.class';
 import { Scarf } from './structural/decorator/scarf.class';
 import { Jacket } from './structural/decorator/jacket.class';
-import { Foreman } from './creational/builder/foreman.class';
-import { ConstructionCrew } from './creational/builder/construction-crew.class';
+import { Director } from './creational/builder/director.class';
+import { Crew } from './creational/builder/crew.class';
 import { Route } from './behavioral/strategy/route.class';
 import { FastestRoute } from './behavioral/strategy/fastest-route.class';
 import { ShortestRoute } from './behavioral/strategy/shortest-route.class';
@@ -23,30 +23,30 @@ export class AppComponent {
   }
 
   private static presentBuilder(): void {
-    const foreman = new Foreman();
-    const constructionCrew = new ConstructionCrew();
-    foreman.setBuilder(constructionCrew);
+    const director = new Director();
+    const crew = new Crew();
+    director.setBuilder(crew);
 
-    foreman.buildBasicVersion();
-    constructionCrew.putHouseIntoUse().showEquipments();
+    director.manageBasicVersion();
+    const basicHouse = crew.putHouseIntoUse();
 
-    foreman.buildPremiumVersion();
-    constructionCrew.putHouseIntoUse().showEquipments();
+    director.managePremiumVersion();
+    const premiumHouse = crew.putHouseIntoUse();
 
-    constructionCrew.buildWithPool('5 feet');
-    constructionCrew.buildWithElevator();
-    constructionCrew.putHouseIntoUse().showEquipments();
+    crew.buildWithPool('5 feet');
+    crew.buildWithElevator();
+    const customHouse = crew.putHouseIntoUse();
   }
 
   private static presentDecorator(): void {
     const woman = new Woman();
     woman.wear();
 
-    const jeweller = new Scarf(woman);
-    jeweller.wear();
+    const jacket = new Jacket(woman);
+    jacket.wear();
 
-    const clothingStore = new Jacket(jeweller);
-    clothingStore.wear();
+    const scarf = new Scarf(jacket);
+    scarf.wear();
   }
 
   private static presentStrategy(): void {

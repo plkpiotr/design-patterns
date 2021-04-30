@@ -1,7 +1,7 @@
 import { Builder } from './builder.interface';
 import { House } from './house.class';
 
-export class ConstructionCrew implements Builder {
+export class Crew implements Builder {
   private house: House;
 
   constructor() {
@@ -17,6 +17,7 @@ export class ConstructionCrew implements Builder {
   }
 
   public putHouseIntoUse(): House {
+    console.warn(this.house.getEquipments);
     const completedHouse = this.house;
     this.house = new House();
     return completedHouse;

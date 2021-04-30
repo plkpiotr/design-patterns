@@ -1,17 +1,17 @@
 import { Builder } from './builder.interface';
 
-export class Foreman {
+export class Director {
   private builder: Builder;
 
   public setBuilder(builder: Builder): void {
     this.builder = builder;
   }
 
-  public buildBasicVersion(): void {
+  public manageBasicVersion(): void {
     this.builder.buildWithElevator();
   }
 
-  public buildPremiumVersion(): void {
+  public managePremiumVersion(): void {
     this.builder.buildWithElevator();
     this.builder.buildWithPool('2 meters');
     this.builder.buildWithPool('3 meters');

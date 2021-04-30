@@ -5,7 +5,7 @@ export class House {
     this.equipments.push(equipment);
   }
 
-  public showEquipments(): void {
-    console.warn(this.equipments);
+  public getEquipments(): string[] {
+    return this.equipments;
   }
 }
