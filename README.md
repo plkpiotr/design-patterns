@@ -66,13 +66,16 @@ director.setBuilder(crew);
 
 director.manageBasicVersion();
 const basicHouse = crew.putHouseIntoUse();
+console.log(basicHouse.getEquipments()); // ["elevator"]
 
 director.managePremiumVersion();
 const premiumHouse = crew.putHouseIntoUse();
+console.log(premiumHouse.getEquipments()); // ["elevator", "big pool", "small pool"]
 
-crew.buildWithPool('5 feet');
+crew.buildWithPool('medium');
 crew.buildWithElevator();
 const customHouse = crew.putHouseIntoUse();
+console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 ```
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
@@ -121,12 +124,15 @@ const customHouse = crew.putHouseIntoUse();
 ```ts
 const woman = new Woman();
 const withCasualClothes = woman.wear();
+console.warn(withCasualClothes); // "wear casual clothes"
 
 const jacket = new Jacket(woman);
 const withJacket = jacket.wear();
+console.warn(withJacket); // "wear casual clothes, jacket"
 
 const scarf = new Scarf(jacket);
 const withScarf = scarf.wear();
+console.warn(withScarf); // "wear casual clothes, jacket, scarf"
 ```
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
@@ -272,9 +278,11 @@ const withScarf = scarf.wear();
 ```ts
 const team = new Team(new DefensiveStrategy());
 const defensiveLineup = team.prepareLineup();
+console.error(defensiveLineup); // ["Tia", "Rocket"]
 
 team.setStrategy(new OffensiveStrategy());
 const offensiveLineup = team.prepareLineup();
+console.error(offensiveLineup); // ["Ahito", "Rocket"]
 ```
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)
