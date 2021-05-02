@@ -1,3 +1,3 @@
 export interface Strategy {
-  selectLineup(players: string[]): string[];
+  chooseLineup(players: string[]): string[];
 }

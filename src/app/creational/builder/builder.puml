@@ -5,14 +5,14 @@ interface Builder {
   buildWithPool(depth: string): void;
 }
 
-class Foreman {
+class Director {
   - builder: Builder
   + setBuilder(builder: Builder): void
-  + buildBasicVersion(): void
-  + buildPremiumVersion(): void
+  + manageBasicVersion(): void
+  + managePremiumVersion(): void
 }
 
-class ConstructionCrew {
+class Crew {
   - house: House
     constructor() {}
   + buildWithElevator(): void
@@ -23,15 +23,16 @@ class ConstructionCrew {
 class House {
   - equipments: string[]
   + addEquipment(equipment: string): void
-  + showEquipments(): void
+  + getEquipments(): string[]
 }
 
-Builder -o Foreman
-Builder <|.. ConstructionCrew
-ConstructionCrew -> House
+Builder -o Director
+Builder <|.. Crew
+Crew -> House
+
 @enduml
 
 ' Association means "has / invoking its function"
 ' Aggregation means can exist independently
 ' Composition means cannot exist independently
-' Director class (Foreman) is optional
+' Director class is optional

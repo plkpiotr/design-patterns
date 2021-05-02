@@ -1,28 +1,28 @@
 @startuml
 
 interface Strategy {
-  findRoute(start: string, destination: string): void
+  chooseLineup(players: string[]): string[]
 }
 
-class Route {
+class Team {
   - strategy: Strategy
   constructor(private strategy: Strategy)
   + setStrategy(strategy: Strategy): void
-  + findRouteToRome(from: string): void
+  + prepareLineup(): string[]
 }
 
-class FastestRoute {
-  + findRoute(start: string, destination: string): void
+class DefensiveStrategy {
+  + chooseLineup(players: string[]): string[]
 }
 
-class ShortestRoute {
-  + findRoute(start: string, destination: string): void
+class OffensiveStrategy {
+  + chooseLineup(players: string[]): string[]
 }
 
-Strategy <-o Route
+Strategy <-o Team
 
-Strategy <|.. FastestRoute
-Strategy <|.. ShortestRoute
+Strategy <|.. DefensiveStrategy
+Strategy <|.. OffensiveStrategy
 
 @enduml
 

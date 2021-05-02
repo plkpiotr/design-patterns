@@ -8,6 +8,6 @@ export class Team {
   }
 
   public prepareLineup(): string[] {
-    return this.strategy.selectLineup(['Tia', 'Rocket', 'Ahito']);
+    return this.strategy.chooseLineup(['Tia', 'Rocket', 'Ahito']);
   }
 }
