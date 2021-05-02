@@ -1,3 +1,9 @@
 @startuml
 
+skinparam class {
+  backgroundColor pink
+  arrowColor firebrick
+  borderColor firebrick
+}
+
 @enduml

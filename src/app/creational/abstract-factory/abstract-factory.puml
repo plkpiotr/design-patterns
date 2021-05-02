@@ -1,3 +1,9 @@
 @startuml
 
+skinparam class {
+  backgroundColor whitesmoke
+  arrowColor dimgrey
+  borderColor dimgrey
+}
+
 @enduml

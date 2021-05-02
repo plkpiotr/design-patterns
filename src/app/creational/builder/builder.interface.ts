@@ -1,4 +1,4 @@
 export interface Builder {
   buildWithElevator(): void;
-  buildWithPool(depth: string): void;
+  buildWithPool(size: string): void;
 }

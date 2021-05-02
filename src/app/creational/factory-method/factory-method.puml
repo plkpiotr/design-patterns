@@ -1,7 +1,10 @@
 @startuml
 
-interface Car {}
-
+skinparam class {
+  backgroundColor whitesmoke
+  arrowColor dimgrey
+  borderColor dimgrey
+}
 
 @enduml
 
