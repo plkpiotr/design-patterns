@@ -1,4 +1,4 @@
-# <a name="list">Design patterns implemented in TypeScript</a>
+# <a name="list">Real-life design patterns with PlantUML diagrams</a>
 
 | Creational | Structural | Behavioral |
 | :----: | :----: | :----: |
@@ -55,7 +55,7 @@
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116828325-45d98d80-ab9e-11eb-8c01-ae483d7205f4.png)
+![builder](https://user-images.githubusercontent.com/21959354/116831407-7f66c480-abaf-11eb-87b0-29164eaadfd4.png)
 
 #### Client code:
 
@@ -118,7 +118,8 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116829554-9f44bb00-aba4-11eb-84d9-2ad54bb4d2b8.png)
+![decorator](https://user-images.githubusercontent.com/21959354/116831408-8392e200-abaf-11eb-9310-75823891e931.png)
+
 #### Client code:
 
 ```ts
@@ -271,7 +272,7 @@ console.warn(withScarf); // "wear casual clothes, jacket, scarf"
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/116828322-43773380-ab9e-11eb-9837-332187753a7c.png)
+![strategy](https://user-images.githubusercontent.com/21959354/116831405-7d046a80-abaf-11eb-82ec-b2c9ea41a953.png)
 
 #### Client code:
 
