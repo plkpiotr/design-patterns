@@ -55,7 +55,7 @@
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116450819-0d634800-a85c-11eb-9ea7-5231fbd1d75b.png)
+![builder](https://user-images.githubusercontent.com/21959354/116828325-45d98d80-ab9e-11eb-8c01-ae483d7205f4.png)
 
 #### Client code:
 
@@ -115,7 +115,7 @@ constructionCrew.putHouseIntoUse().showEquipments();
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116450831-0fc5a200-a85c-11eb-86e5-bebc85dc19dc.png)
+![decorator](https://user-images.githubusercontent.com/21959354/116828328-483be780-ab9e-11eb-8d51-c574c2d784c7.png)
 
 #### Client code:
 
@@ -266,7 +266,7 @@ clothingStore.wear();
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/116450815-0a685780-a85c-11eb-8f61-63e4bece202c.png)
+![strategy](https://user-images.githubusercontent.com/21959354/116828322-43773380-ab9e-11eb-9837-332187753a7c.png)
 
 #### Client code:
 

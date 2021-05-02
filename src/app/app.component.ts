@@ -15,8 +15,8 @@ import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.clas
 })
 export class AppComponent {
   constructor() {
-    // AppComponent.presentBuilder();
-    // AppComponent.presentDecorator();
+    AppComponent.presentBuilder();
+    AppComponent.presentDecorator();
     AppComponent.presentStrategy();
   }
 
@@ -48,10 +48,10 @@ export class AppComponent {
   }
 
   private static presentStrategy(): void {
-    const team = new Team(new OffensiveStrategy());
-    const offensiveLineup = team.prepareLineup();
-
-    team.setStrategy(new DefensiveStrategy());
+    const team = new Team(new DefensiveStrategy());
     const defensiveLineup = team.prepareLineup();
+
+    team.setStrategy(new OffensiveStrategy());
+    const offensiveLineup = team.prepareLineup();
   }
 }
