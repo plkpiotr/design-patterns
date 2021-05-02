@@ -1,5 +1,11 @@
 @startuml
 
+skinparam class {
+  backgroundColor lightgoldenrodyellow
+  arrowColor darkgoldenrod
+  borderColor darkgoldenrod
+}
+
 interface Person {
   wear(): string
 }

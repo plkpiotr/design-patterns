@@ -12,12 +12,11 @@ export class Crew implements Builder {
     this.house.addEquipment('elevator');
   }
 
-  public buildWithPool(depth: string): void {
-    this.house.addEquipment(`pool with water depth: ${depth}`);
+  public buildWithPool(size: string): void {
+    this.house.addEquipment(`${size} pool`);
   }
 
   public putHouseIntoUse(): House {
-    console.warn(this.house.getEquipments());
     const completedHouse = this.house;
     this.house = new House();
     return completedHouse;

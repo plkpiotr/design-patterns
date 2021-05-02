@@ -13,7 +13,7 @@ export class Director {
 
   public managePremiumVersion(): void {
     this.builder.buildWithElevator();
-    this.builder.buildWithPool('2 meters');
-    this.builder.buildWithPool('3 meters');
+    this.builder.buildWithPool('big');
+    this.builder.buildWithPool('small');
   }
 }

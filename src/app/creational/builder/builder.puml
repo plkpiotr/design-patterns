@@ -1,8 +1,14 @@
 @startuml
 
+skinparam class {
+  backgroundColor whitesmoke
+  arrowColor dimgrey
+  borderColor dimgrey
+}
+
 interface Builder {
-  buildWithElevator(): void;
-  buildWithPool(depth: string): void;
+  buildWithElevator(): void
+  buildWithPool(size: string): void
 }
 
 class Director {
@@ -16,7 +22,7 @@ class Crew {
   - house: House
     constructor() {}
   + buildWithElevator(): void
-  + buildWithPool((depth: string): void
+  + buildWithPool((size: string): void
   + putHouseIntoUse(): House
 }
 

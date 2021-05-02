@@ -27,39 +27,39 @@ export class AppComponent {
 
     director.manageBasicVersion();
     const basicHouse = crew.putHouseIntoUse();
-    console.log(basicHouse.getEquipments());
+    console.log(basicHouse.getEquipments()); // ["elevator"]
 
     director.managePremiumVersion();
     const premiumHouse = crew.putHouseIntoUse();
-    console.warn(premiumHouse.getEquipments());
+    console.log(premiumHouse.getEquipments()); // ["elevator", "big pool", "small pool"]
 
-    crew.buildWithPool('5 feet');
+    crew.buildWithPool('medium');
     crew.buildWithElevator();
     const customHouse = crew.putHouseIntoUse();
-    console.error(customHouse.getEquipments());
+    console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
   }
 
   private static presentDecorator(): void {
     const woman = new Woman();
     const withCasualClothes = woman.wear();
-    console.log(withCasualClothes);
+    console.warn(withCasualClothes); // "wear casual clothes"
 
     const jacket = new Jacket(woman);
     const withJacket = jacket.wear();
-    console.warn(withJacket);
+    console.warn(withJacket); // "wear casual clothes, jacket"
 
     const scarf = new Scarf(jacket);
     const withScarf = scarf.wear();
-    console.error(withScarf);
+    console.warn(withScarf); // "wear casual clothes, jacket, scarf"
   }
 
   private static presentStrategy(): void {
     const team = new Team(new DefensiveStrategy());
     const defensiveLineup = team.prepareLineup();
-    console.log(defensiveLineup);
+    console.error(defensiveLineup); // ["Tia", "Rocket"]
 
     team.setStrategy(new OffensiveStrategy());
     const offensiveLineup = team.prepareLineup();
-    console.warn(offensiveLineup);
+    console.error(offensiveLineup); // ["Ahito", "Rocket"]
   }
 }
