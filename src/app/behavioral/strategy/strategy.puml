@@ -26,5 +26,5 @@ Strategy <|.. ShortestRoute
 
 @enduml
 
-' findRouteToRome() may be client logic
-' arguments of findRoute() functions are input data for concrete strategies
+' prepareLineup() may be client logic
+' prepareLineup() can have parameters which are input data for concrete strategies

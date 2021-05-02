@@ -4,9 +4,9 @@ import { Scarf } from './structural/decorator/scarf.class';
 import { Jacket } from './structural/decorator/jacket.class';
 import { Director } from './creational/builder/director.class';
 import { Crew } from './creational/builder/crew.class';
-import { Route } from './behavioral/strategy/route.class';
-import { FastestRoute } from './behavioral/strategy/fastest-route.class';
-import { ShortestRoute } from './behavioral/strategy/shortest-route.class';
+import { Team } from './behavioral/strategy/team.class';
+import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.class';
+import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.class';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +14,9 @@ import { ShortestRoute } from './behavioral/strategy/shortest-route.class';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'design';
-
   constructor() {
-    AppComponent.presentBuilder();
-    AppComponent.presentDecorator();
+    // AppComponent.presentBuilder();
+    // AppComponent.presentDecorator();
     AppComponent.presentStrategy();
   }
 
@@ -50,10 +48,10 @@ export class AppComponent {
   }
 
   private static presentStrategy(): void {
-    const route = new Route(new FastestRoute());
-    route.findRouteToRome('Warsaw');
+    const team = new Team(new OffensiveStrategy());
+    const offensiveLineup = team.prepareLineup();
 
-    route.setStrategy(new ShortestRoute());
-    route.findRouteToRome('Paris');
+    team.setStrategy(new DefensiveStrategy());
+    const defensiveLineup = team.prepareLineup();
   }
 }

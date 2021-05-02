@@ -1,3 +1,3 @@
 export interface Strategy {
-  findRoute(start: string, destination: string): void;
+  selectLineup(players: string[]): string[];
 }

@@ -1,5 +1,9 @@
-/* Netrunner theme:
 * {
+  margin: 0;
+  background-color: #121212;
+}
+
+/* Netrunner theme:
   meta: #AA8866;
   keyword: #F92672;
   parameter: #FD971F;
@@ -14,5 +18,4 @@
   number: #FF9999;
   variable-global: #FFBBFF;
   plain: #f8f8f2;
-}
 */

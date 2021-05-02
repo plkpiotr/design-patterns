@@ -17,7 +17,7 @@ export class Crew implements Builder {
   }
 
   public putHouseIntoUse(): House {
-    console.warn(this.house.getEquipments);
+    console.warn(this.house.getEquipments());
     const completedHouse = this.house;
     this.house = new House();
     return completedHouse;

@@ -1,13 +1,13 @@
 import { Strategy } from './strategy.interface';
 
-export class Route {
+export class Team {
   constructor(private strategy: Strategy) {}
 
   public setStrategy(strategy: Strategy): void {
     this.strategy = strategy;
   }
 
-  public findRouteToRome(from: string): void {
-    this.strategy.findRoute(from, 'Rome');
+  public prepareLineup(): string[] {
+    return this.strategy.selectLineup(['Tia', 'Rocket', 'Ahito']);
   }
 }
