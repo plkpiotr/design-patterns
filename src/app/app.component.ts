@@ -27,31 +27,39 @@ export class AppComponent {
 
     director.manageBasicVersion();
     const basicHouse = crew.putHouseIntoUse();
+    console.log(basicHouse.getEquipments());
 
     director.managePremiumVersion();
     const premiumHouse = crew.putHouseIntoUse();
+    console.warn(premiumHouse.getEquipments());
 
     crew.buildWithPool('5 feet');
     crew.buildWithElevator();
     const customHouse = crew.putHouseIntoUse();
+    console.error(customHouse.getEquipments());
   }
 
   private static presentDecorator(): void {
     const woman = new Woman();
-    woman.wear();
+    const withCasualClothes = woman.wear();
+    console.log(withCasualClothes);
 
     const jacket = new Jacket(woman);
-    jacket.wear();
+    const withJacket = jacket.wear();
+    console.warn(withJacket);
 
     const scarf = new Scarf(jacket);
-    scarf.wear();
+    const withScarf = scarf.wear();
+    console.error(withScarf);
   }
 
   private static presentStrategy(): void {
     const team = new Team(new DefensiveStrategy());
     const defensiveLineup = team.prepareLineup();
+    console.log(defensiveLineup);
 
     team.setStrategy(new OffensiveStrategy());
     const offensiveLineup = team.prepareLineup();
+    console.warn(offensiveLineup);
   }
 }

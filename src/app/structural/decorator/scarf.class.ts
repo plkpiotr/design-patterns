@@ -1,8 +1,9 @@
 import { Clothing } from './clothing.class';
 
 export class Scarf extends Clothing {
-  public wear(): void {
-    super.wear();
-    console.error('wear a scarf');
+  public wear(): string {
+    const withScarf = `${super.wear()}, scarf`;
+    console.error(withScarf);
+    return withScarf;
   }
 }

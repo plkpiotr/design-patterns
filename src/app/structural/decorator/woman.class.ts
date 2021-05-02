@@ -1,7 +1,9 @@
 import { Person } from './person.interface';
 
 export class Woman implements Person {
-  public wear(): void {
-    console.log('wear casual clothes');
+  public wear(): string {
+    const casualClothes = 'wear casual clothes';
+    console.log(casualClothes);
+    return `${casualClothes}`;
   }
 }

@@ -60,19 +60,19 @@
 #### Client code:
 
 ```ts
-const foreman = new Foreman();
-const constructionCrew = new ConstructionCrew();
-foreman.setBuilder(constructionCrew);
+const director = new Director();
+const crew = new Crew();
+director.setBuilder(crew);
 
-foreman.buildBasicVersion();
-constructionCrew.putHouseIntoUse().showEquipments();
+director.manageBasicVersion();
+const basicHouse = crew.putHouseIntoUse();
 
-foreman.buildPremiumVersion();
-constructionCrew.putHouseIntoUse().showEquipments();
+director.managePremiumVersion();
+const premiumHouse = crew.putHouseIntoUse();
 
-constructionCrew.buildWithPool('5 feet');
-constructionCrew.buildWithElevator();
-constructionCrew.putHouseIntoUse().showEquipments();
+crew.buildWithPool('5 feet');
+crew.buildWithElevator();
+const customHouse = crew.putHouseIntoUse();
 ```
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
@@ -115,19 +115,18 @@ constructionCrew.putHouseIntoUse().showEquipments();
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116828328-483be780-ab9e-11eb-8d51-c574c2d784c7.png)
-
+![decorator](https://user-images.githubusercontent.com/21959354/116829554-9f44bb00-aba4-11eb-84d9-2ad54bb4d2b8.png)
 #### Client code:
 
 ```ts
 const woman = new Woman();
-woman.wear();
+const withCasualClothes = woman.wear();
 
-const jeweller = new Jeweller(woman);
-jeweller.wear();
+const jacket = new Jacket(woman);
+const withJacket = jacket.wear();
 
-const clothingStore = new ClothingStore(jeweller);
-clothingStore.wear();
+const scarf = new Scarf(jacket);
+const withScarf = scarf.wear();
 ```
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
@@ -271,11 +270,11 @@ clothingStore.wear();
 #### Client code:
 
 ```ts
-const route = new Route(new FastestRoute());
-route.findRouteToRome('Warsaw');
+const team = new Team(new DefensiveStrategy());
+const defensiveLineup = team.prepareLineup();
 
-route.setStrategy(new ShortestRoute());
-route.findRouteToRome('Paris');
+team.setStrategy(new OffensiveStrategy());
+const offensiveLineup = team.prepareLineup();
 ```
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)

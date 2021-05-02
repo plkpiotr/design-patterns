@@ -1,25 +1,25 @@
 @startuml
 
 interface Person {
-  wear(): void
+  wear(): string
 }
 
 class Woman {
-  + wear(): void
+  + wear(): string
 }
 
 class Shop {
   - person: Person
   constructor(private person: Person)
-  + wear(): void
+  + wear(): string
 }
 
 class Jacket {
-  + wear(): void
+  + wear(): string
 }
 
 class Scarf {
-  + wear(): void
+  + wear(): string
 }
 
 Person <|. Woman
