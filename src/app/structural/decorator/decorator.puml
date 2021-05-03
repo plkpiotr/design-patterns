@@ -20,11 +20,11 @@ class Shop {
   + wear(): string
 }
 
-class Jacket {
+class ClothingStore {
   + wear(): string
 }
 
-class Scarf {
+class Jeweller {
   + wear(): string
 }
 
@@ -32,8 +32,8 @@ Person <|. Woman
 Person <--o Shop
 Person <|.. Shop
 
-Shop <|-- Jacket
-Shop <|-- Scarf
+Shop <|-- ClothingStore
+Shop <|-- Jeweller
 
 @enduml
 

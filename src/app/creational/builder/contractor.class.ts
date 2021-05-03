@@ -1,7 +1,7 @@
 import { Builder } from './builder.interface';
 import { House } from './house.class';
 
-export class Crew implements Builder {
+export class Contractor implements Builder {
   private house: House;
 
   constructor() {

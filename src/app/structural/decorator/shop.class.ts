@@ -1,6 +1,6 @@
 import { Person } from './person.interface';
 
-export class Clothing implements Person {
+export class Shop implements Person {
   constructor(private person: Person) {}
 
   public wear(): string {

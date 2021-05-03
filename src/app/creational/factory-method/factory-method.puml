@@ -6,6 +6,39 @@ skinparam class {
   borderColor dimgrey
 }
 
+interface Vehicle {
+  + drive(): string
+}
+
+abstract class Courier {
+  + {abstract} factoryMethod(): Vehicle
+  + deliver(): string
+}
+
+class Car {
+  + drive(): string
+}
+
+class Truck {
+  + drive(): string
+}
+
+class CarCourier {
+  + factoryMethod(): Vehicle
+}
+
+class TruckCourier {
+  + factoryMethod(): Vehicle
+}
+
+Vehicle <|.. Car
+Vehicle <|.. Truck
+
+Courier <|-- CarCourier
+Courier <|-- TruckCourier
+
+Vehicle <. Courier
+
 @enduml
 
 ' Abstract class may also provide default implementation of the factory method

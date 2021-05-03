@@ -18,7 +18,7 @@ class Director {
   + managePremiumVersion(): void
 }
 
-class Crew {
+class Contractor {
   - house: House
     constructor() {}
   + buildWithElevator(): void
@@ -32,13 +32,10 @@ class House {
   + getEquipments(): string[]
 }
 
-Builder -o Director
-Builder <|.. Crew
-Crew -> House
+Builder <-o Director
+Builder <|.. Contractor
+Contractor -> House
 
 @enduml
 
-' Association means "has / invoking its function"
-' Aggregation means can exist independently
-' Composition means cannot exist independently
 ' Director class is optional

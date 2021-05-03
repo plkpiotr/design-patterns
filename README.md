@@ -55,26 +55,26 @@
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116831407-7f66c480-abaf-11eb-87b0-29164eaadfd4.png)
+![builder](https://user-images.githubusercontent.com/21959354/116945892-092e9480-ac79-11eb-936d-9770ca2ae770.png)
 
 #### Client code:
 
 ```ts
 const director = new Director();
-const crew = new Crew();
-director.setBuilder(crew);
+const contractor = new Contractor();
+director.setBuilder(contractor);
 
 director.manageBasicVersion();
-const basicHouse = crew.putHouseIntoUse();
+const basicHouse = contractor.putHouseIntoUse();
 console.log(basicHouse.getEquipments()); // ["elevator"]
 
 director.managePremiumVersion();
-const premiumHouse = crew.putHouseIntoUse();
+const premiumHouse = contractor.putHouseIntoUse();
 console.log(premiumHouse.getEquipments()); // ["elevator", "big pool", "small pool"]
 
-crew.buildWithPool('medium');
-crew.buildWithElevator();
-const customHouse = crew.putHouseIntoUse();
+contractor.buildWithPool('medium');
+contractor.buildWithElevator();
+const customHouse = contractor.putHouseIntoUse();
 console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 ```
 
@@ -118,22 +118,22 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116831408-8392e200-abaf-11eb-9310-75823891e931.png)
+![decorator](https://user-images.githubusercontent.com/21959354/116945895-0a5fc180-ac79-11eb-86d7-00df6f22b70c.png)
 
 #### Client code:
 
 ```ts
 const woman = new Woman();
 const withCasualClothes = woman.wear();
-console.warn(withCasualClothes); // "wear casual clothes"
+console.warn(withCasualClothes); // "worn casual clothes"
 
-const jacket = new Jacket(woman);
-const withJacket = jacket.wear();
-console.warn(withJacket); // "wear casual clothes, jacket"
+const clothingStore = new ClothingStore(woman);
+const withScarf = clothingStore.wear();
+console.warn(withScarf); // "worn casual clothes, scarf"
 
-const scarf = new Scarf(jacket);
-const withScarf = scarf.wear();
-console.warn(withScarf); // "wear casual clothes, jacket, scarf"
+const jeweller = new Jeweller(clothingStore);
+const withBracelet = jeweller.wear();
+console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
 ```
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
@@ -152,12 +152,18 @@ console.warn(withScarf); // "wear casual clothes, jacket, scarf"
 
 #### UML diagram:
 
-![factory-method](localhost:4200)
+![factory-method](https://user-images.githubusercontent.com/21959354/116945893-0a5fc180-ac79-11eb-9ebf-a483632b46e6.png)
 
 #### Client code:
 
 ```ts
+const carCourier = new CarCourier();
+const car = carCourier.deliver();
+console.log(car); // "delivered by a car"
 
+const truckCourier = new TruckCourier();
+const truck = truckCourier.deliver();
+console.log(truck); // "delivered by a truck"
 ```
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
@@ -272,7 +278,7 @@ console.warn(withScarf); // "wear casual clothes, jacket, scarf"
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/116831405-7d046a80-abaf-11eb-82ec-b2c9ea41a953.png)
+![strategy](https://user-images.githubusercontent.com/21959354/116945897-0af85800-ac79-11eb-9bc1-c0b14f5f107f.png)
 
 #### Client code:
 
