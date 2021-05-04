@@ -130,7 +130,7 @@ None
 
 ## <a name="decorator">Decorator</a> [structural] [&#8657;](#list)
 
-Decorator allows you to add a new functionality to the existing class.
+Decorator allows you to add a new functionality to an existing class.
 
 #### UML diagram:
 
@@ -177,13 +177,13 @@ Factory method provides an interface to create objects using subclasses.
 #### Client code:
 
 ```ts
-const carCourier = new CarCourier();
-const car = carCourier.deliver();
-console.log(car); // "delivered by a car"
+const painterStudio = new PainterStudio();
+const painting = painterStudio.createMasterpiece();
+console.log(painting); // "created a painting"
 
-const truckCourier = new TruckCourier();
-const truck = truckCourier.deliver();
-console.log(truck); // "delivered by a truck"
+const sculptorStudio = new SculptorStudio();
+const sculpture = sculptorStudio.createMasterpiece();
+console.log(sculpture); // "created a sculpture"
 ```
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
