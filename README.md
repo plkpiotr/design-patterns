@@ -17,8 +17,6 @@
 
 ## <a name="abstract-factory">Abstract factory</a> [creational] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -32,8 +30,6 @@ None
 ```
 
 ## <a name="adapter">Adapter</a> [structural] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -49,8 +45,6 @@ None
 
 ## <a name="bridge">Bridge</a> [structural] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -64,8 +58,6 @@ None
 ```
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
-
-#### Intent:
 
 Builder provides an interface (optional a class) to create objects in stages.
 
@@ -96,8 +88,6 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -111,8 +101,6 @@ None
 ```
 
 ## <a name="command">Command</a> [behavioral] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -128,8 +116,6 @@ None
 
 ## <a name="composite">Composite</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -143,8 +129,6 @@ None
 ```
 
 ## <a name="decorator">Decorator</a> [structural] [&#8657;](#list)
-
-#### Intent:
 
 Decorator allows you to add a new functionality to the existing class.
 
@@ -170,8 +154,6 @@ console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -185,8 +167,6 @@ None
 ```
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
-
-#### Intent:
 
 Factory method provides an interface to create objects using subclasses.
 
@@ -208,8 +188,6 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -223,8 +201,6 @@ None
 ```
 
 ## <a name="iterator">Iterator</a> [behavioral] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -240,8 +216,6 @@ None
 
 ## <a name="mediator">Mediator</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -255,8 +229,6 @@ None
 ```
 
 ## <a name="memento">Memento</a> [behavioral] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -272,8 +244,6 @@ None
 
 ## <a name="observer">Observer</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -287,8 +257,6 @@ None
 ```
 
 ## <a name="prototype">Prototype</a> [creational] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -304,8 +272,6 @@ None
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -319,8 +285,6 @@ None
 ```
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
-
-#### Intent:
 
 None
 
@@ -336,8 +300,6 @@ None
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -351,8 +313,6 @@ None
 ```
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
-
-#### Intent:
 
 Strategy defines a family of algorithms (for a given context) encapsulated them in the form of separated classes.
 
@@ -374,8 +334,6 @@ console.error(offensiveLineup); // ["Ahito", "Rocket"]
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)
 
-#### Intent:
-
 None
 
 #### UML diagram:
@@ -389,8 +347,6 @@ None
 ```
 
 ## <a name="visitor">Visitor</a> [behavioral] [&#8657;](#list)
-
-#### Intent:
 
 None
 
