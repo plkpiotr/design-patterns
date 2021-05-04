@@ -59,7 +59,7 @@ None
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
 
-Builder provides an interface (optional a class) to create objects in stages.
+Builder provides an interface to create objects in stages.
 
 #### UML diagram:
 
