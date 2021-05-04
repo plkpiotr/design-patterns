@@ -7,8 +7,8 @@ import { Contractor } from './creational/builder/contractor.class';
 import { Team } from './behavioral/strategy/team.class';
 import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.class';
 import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.class';
-import { CarCourier } from './creational/factory-method/car-courier.class';
-import { TruckCourier } from './creational/factory-method/truck-courier.class';
+import { PainterStudio } from './creational/factory-method/painter-studio.class';
+import { SculptorStudio } from './creational/factory-method/sculptor-studio.class';
 
 @Component({
   selector: 'app-root',
@@ -43,13 +43,13 @@ export class AppComponent {
   }
 
   private static presentFactoryMethod(): void {
-    const carCourier = new CarCourier();
-    const car = carCourier.deliver();
-    console.log(car); // "delivered by a car"
+    const painterStudio = new PainterStudio();
+    const painting = painterStudio.createMasterpiece();
+    console.log(painting); // "created a painting"
 
-    const truckCourier = new TruckCourier();
-    const truck = truckCourier.deliver();
-    console.log(truck); // "delivered by a truck"
+    const sculptorStudio = new SculptorStudio();
+    const sculpture = sculptorStudio.createMasterpiece();
+    console.log(sculpture); // "created a sculpture"
   }
 
   private static presentDecorator(): void {

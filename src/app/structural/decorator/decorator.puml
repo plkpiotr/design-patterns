@@ -10,7 +10,7 @@ interface Person {
   wear(): string
 }
 
-class Woman {
+class Woman <O> {
   + wear(): string
 }
 
@@ -20,11 +20,11 @@ class Shop {
   + wear(): string
 }
 
-class ClothingStore {
+class ClothingStore <O> {
   + wear(): string
 }
 
-class Jeweller {
+class Jeweller <O> {
   + wear(): string
 }
 

@@ -6,38 +6,38 @@ skinparam class {
   borderColor dimgrey
 }
 
-interface Vehicle {
-  + drive(): string
+interface Masterpiece {
+  + create(): string
 }
 
-abstract class Courier {
-  + {abstract} factoryMethod(): Vehicle
-  + deliver(): string
+abstract class Studio {
+  + {abstract} factoryMethod(): Masterpiece
+  + createMasterpiece(): string
 }
 
-class Car {
-  + drive(): string
+class Painter {
+  + create(): string
 }
 
-class Truck {
-  + drive(): string
+class Sculptor {
+  + create(): string
 }
 
-class CarCourier {
-  + factoryMethod(): Vehicle
+class PainterStudio <O> {
+  + factoryMethod(): Masterpiece
 }
 
-class TruckCourier {
-  + factoryMethod(): Vehicle
+class SculptorStudio <O> {
+  + factoryMethod(): Masterpiece
 }
 
-Vehicle <|.. Car
-Vehicle <|.. Truck
+Masterpiece <|.. Painter
+Masterpiece <|.. Sculptor
 
-Courier <|-- CarCourier
-Courier <|-- TruckCourier
+Studio <|-- PainterStudio
+Studio <|-- SculptorStudio
 
-Vehicle <. Courier
+Masterpiece <. Studio
 
 @enduml
 

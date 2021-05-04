@@ -17,6 +17,10 @@
 
 ## <a name="abstract-factory">Abstract factory</a> [creational] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![abstract-factory](localhost:4200)
@@ -28,6 +32,10 @@
 ```
 
 ## <a name="adapter">Adapter</a> [structural] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -41,6 +49,10 @@
 
 ## <a name="bridge">Bridge</a> [structural] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![bridge](localhost:4200)
@@ -53,9 +65,13 @@
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
 
+#### Intent:
+
+Builder provides an interface (optional a class) to create objects in stages.
+
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116945892-092e9480-ac79-11eb-936d-9770ca2ae770.png)
+![builder](https://user-images.githubusercontent.com/21959354/116998398-7294be80-acde-11eb-94db-0f02afdb9849.png)
 
 #### Client code:
 
@@ -80,6 +96,10 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![chain-of-responsibility](localhost:4200)
@@ -91,6 +111,10 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 ```
 
 ## <a name="command">Command</a> [behavioral] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -104,6 +128,10 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 ## <a name="composite">Composite</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![composite](localhost:4200)
@@ -116,9 +144,13 @@ console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
 
 ## <a name="decorator">Decorator</a> [structural] [&#8657;](#list)
 
+#### Intent:
+
+Decorator allows you to add a new functionality to the existing class.
+
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116945895-0a5fc180-ac79-11eb-86d7-00df6f22b70c.png)
+![decorator](https://user-images.githubusercontent.com/21959354/116998401-73c5eb80-acde-11eb-9d32-cb9b4966d9a1.png)
 
 #### Client code:
 
@@ -138,6 +170,10 @@ console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![facade](localhost:4200)
@@ -150,9 +186,13 @@ console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
 
+#### Intent:
+
+Factory method provides an interface to create objects using subclasses.
+
 #### UML diagram:
 
-![factory-method](https://user-images.githubusercontent.com/21959354/116945893-0a5fc180-ac79-11eb-9ebf-a483632b46e6.png)
+![factory-method](https://user-images.githubusercontent.com/21959354/116998399-732d5500-acde-11eb-8bc3-728b144ac3ed.png)
 
 #### Client code:
 
@@ -168,6 +208,10 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![flyweight](localhost:4200)
@@ -179,6 +223,10 @@ console.log(truck); // "delivered by a truck"
 ```
 
 ## <a name="iterator">Iterator</a> [behavioral] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -192,6 +240,10 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="mediator">Mediator</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![mediator](localhost:4200)
@@ -203,6 +255,10 @@ console.log(truck); // "delivered by a truck"
 ```
 
 ## <a name="memento">Memento</a> [behavioral] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -216,6 +272,10 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="observer">Observer</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![observer](localhost:4200)
@@ -227,6 +287,10 @@ console.log(truck); // "delivered by a truck"
 ```
 
 ## <a name="prototype">Prototype</a> [creational] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -240,6 +304,10 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![proxy](localhost:4200)
@@ -251,6 +319,10 @@ console.log(truck); // "delivered by a truck"
 ```
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
@@ -264,6 +336,10 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![state](localhost:4200)
@@ -276,9 +352,13 @@ console.log(truck); // "delivered by a truck"
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+Strategy defines a family of algorithms (for a given context) encapsulated them in the form of separated classes.
+
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/116945897-0af85800-ac79-11eb-9bc1-c0b14f5f107f.png)
+![strategy](https://user-images.githubusercontent.com/21959354/116998395-71fc2800-acde-11eb-960a-7ae273b17463.png)
 
 #### Client code:
 
@@ -294,6 +374,10 @@ console.error(offensiveLineup); // ["Ahito", "Rocket"]
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)
 
+#### Intent:
+
+None
+
 #### UML diagram:
 
 ![template-method](localhost:4200)
@@ -305,6 +389,10 @@ console.error(offensiveLineup); // ["Ahito", "Rocket"]
 ```
 
 ## <a name="visitor">Visitor</a> [behavioral] [&#8657;](#list)
+
+#### Intent:
+
+None
 
 #### UML diagram:
 
