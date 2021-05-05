@@ -66,4 +66,4 @@ RetroFactory ..> RetroChair
 
 @enduml
 
-' Specified tables (RetroTable and ModernTable) can use any kind of Chair
+' Specified tables (RetroTable and ModernTable) can use any kind of Chair (RetroChair and ModernChair)

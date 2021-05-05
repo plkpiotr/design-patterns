@@ -17,11 +17,11 @@
 
 ## <a name="abstract-factory">Abstract factory</a> [creational] [&#8657;](#list)
 
-None
+Abstract factory provides an interface to create objects from specific family.
 
 #### UML diagram:
 
-![abstract-factory](localhost:4200)
+![abstract-factory](https://user-images.githubusercontent.com/21959354/117216441-0f9b4880-ae00-11eb-9c6d-124a2d7d4192.png)
 
 #### Client code:
 
@@ -63,7 +63,7 @@ Builder provides an interface to create objects in stages.
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/116998398-7294be80-acde-11eb-94db-0f02afdb9849.png)
+![builder](https://user-images.githubusercontent.com/21959354/117216443-1033df00-ae00-11eb-8d2b-26c4421df656.png)
 
 #### Client code:
 
@@ -134,7 +134,7 @@ Decorator allows you to add a new functionality to an existing class.
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/116998401-73c5eb80-acde-11eb-9d32-cb9b4966d9a1.png)
+![decorator](https://user-images.githubusercontent.com/21959354/117216445-10cc7580-ae00-11eb-8dec-f275c4ba28af.png)
 
 #### Client code:
 
@@ -172,7 +172,7 @@ Factory method provides an interface to create objects using subclasses.
 
 #### UML diagram:
 
-![factory-method](https://user-images.githubusercontent.com/21959354/116998399-732d5500-acde-11eb-8bc3-728b144ac3ed.png)
+![factory-method](https://user-images.githubusercontent.com/21959354/117216444-1033df00-ae00-11eb-994c-558a0138a306.png)
 
 #### Client code:
 
@@ -318,7 +318,7 @@ Strategy defines a family of algorithms (for a given context) encapsulated them 
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/116998395-71fc2800-acde-11eb-960a-7ae273b17463.png)
+![strategy](https://user-images.githubusercontent.com/21959354/117216438-0e6a1b80-ae00-11eb-85d4-4d5d8d90cc81.png)
 
 #### Client code:
 

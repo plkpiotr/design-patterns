@@ -11,7 +11,7 @@ interface Builder {
   buildWithPool(size: string): void
 }
 
-class Director <OR> {
+class Director <OPT> {
   - builder: Builder
   + setBuilder(builder: Builder): void
   + manageBasicVersion(): void
