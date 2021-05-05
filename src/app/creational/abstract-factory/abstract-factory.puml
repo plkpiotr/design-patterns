@@ -6,4 +6,64 @@ skinparam class {
   borderColor dimgrey
 }
 
+interface FurnitureFactory {
+  createChair(): Chair
+  createTable(): Table
+}
+
+class RetroFactory <XOR> {
+  + createChair(): Chair
+  + createTable(): Table
+}
+
+class ModernFactory <XOR> {
+  + createChair(): Chair
+  + createTable(): Table
+}
+
+interface Chair {
+  showOffer(): string
+}
+
+class RetroChair {
+  + showOffer(): string
+}
+
+class ModernChair {
+  + public showOffer(): string
+}
+
+interface Table {
+  showRegularOffer(): string
+  showSpecialOffer(chair: Chair): string
+}
+
+class RetroTable {
+  + showRegularOffer(): string
+  + showSpecialOffer(chair: Chair): string
+}
+
+class ModernTable {
+  + showRegularOffer(): string
+  + showSpecialOffer(chair: Chair): string
+}
+
+FurnitureFactory <|.. RetroFactory
+FurnitureFactory <|.. ModernFactory
+
+Chair <|.. RetroChair
+Chair <|.. ModernChair
+
+Table <|.. RetroTable
+Table <|.. ModernTable
+
+
+ModernFactory ..> ModernTable
+ModernFactory ..> ModernChair
+
+RetroFactory ..> RetroTable
+RetroFactory ..> RetroChair
+
 @enduml
+
+' Specified tables (RetroTable and ModernTable) can use any kind of Chair

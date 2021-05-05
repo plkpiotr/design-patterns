@@ -9,6 +9,8 @@ import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.clas
 import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.class';
 import { PainterStudio } from './creational/factory-method/painter-studio.class';
 import { SculptorStudio } from './creational/factory-method/sculptor-studio.class';
+import { RetroFactory } from './creational/abstract-factory/retro-factory.class';
+import { ModernFactory } from './creational/abstract-factory/modern-factory.class';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +19,24 @@ import { SculptorStudio } from './creational/factory-method/sculptor-studio.clas
 })
 export class AppComponent {
   constructor() {
+    AppComponent.presentAbstractFactory();
     AppComponent.presentBuilder();
     AppComponent.presentFactoryMethod();
     AppComponent.presentDecorator();
     AppComponent.presentStrategy();
+  }
+
+  private static presentAbstractFactory(): void {
+    const retroFactory = new RetroFactory();
+    const retroChair = retroFactory.createChair();
+    const retroTable = retroFactory.createTable();
+    console.log(retroTable.showRegularOffer()); // "retro table itself costs $499"
+    console.log(retroTable.showSpecialOffer(retroChair)); // "retro table with any chair cost $599, retro chair itself costs $199"
+
+    const modernFactory = new ModernFactory();
+    const modernTable = modernFactory.createTable();
+    console.log(modernTable.showRegularOffer()); // "modern table itself costs $399"
+    console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any chair cost $499, retro chair itself costs $199"
   }
 
   private static presentBuilder(): void {

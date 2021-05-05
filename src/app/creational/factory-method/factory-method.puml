@@ -23,11 +23,11 @@ class Sculptor {
   + create(): string
 }
 
-class PainterStudio <O> {
+class PainterStudio <XOR> {
   + factoryMethod(): Masterpiece
 }
 
-class SculptorStudio <O> {
+class SculptorStudio <XOR> {
   + factoryMethod(): Masterpiece
 }
 
@@ -39,7 +39,10 @@ Studio <|-- SculptorStudio
 
 Masterpiece <. Studio
 
+'Painter .. PainterStudio
+'Sculptor .. SculptorStudio
+
 @enduml
 
-' Abstract class may also provide default implementation of the factory method
-' Client code is not aware of Creator class
+' Abstract class may also provide default implementation of factory method
+' Client code is not aware of creator class (Studio)

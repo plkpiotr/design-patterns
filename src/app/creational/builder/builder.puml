@@ -11,14 +11,14 @@ interface Builder {
   buildWithPool(size: string): void
 }
 
-class Director <O> {
+class Director <OR> {
   - builder: Builder
   + setBuilder(builder: Builder): void
   + manageBasicVersion(): void
   + managePremiumVersion(): void
 }
 
-class Contractor <O> {
+class Contractor <PRE> {
   - house: House
     constructor() {}
   + buildWithElevator(): void

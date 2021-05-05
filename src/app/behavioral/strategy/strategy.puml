@@ -10,18 +10,18 @@ interface Strategy {
   chooseLineup(players: string[]): string[]
 }
 
-class Team <O> {
+class Team <PRE> {
   - strategy: Strategy
   constructor(private strategy: Strategy)
   + setStrategy(strategy: Strategy): void
   + prepareLineup(): string[]
 }
 
-class DefensiveStrategy <O> {
+class DefensiveStrategy <XOR> {
   + chooseLineup(players: string[]): string[]
 }
 
-class OffensiveStrategy <O> {
+class OffensiveStrategy <XOR> {
   + chooseLineup(players: string[]): string[]
 }
 
