@@ -26,7 +26,16 @@ Abstract factory provides an interface to create objects from specific family.
 #### Client code:
 
 ```ts
+const retroFactory = new RetroFactory();
+const retroChair = retroFactory.createChair();
+const retroTable = retroFactory.createTable();
+console.log(retroTable.showRegularOffer()); // "retro table itself costs $499"
+console.log(retroTable.showSpecialOffer(retroChair)); // "retro table with any chair cost $599, retro chair itself costs $199"
 
+const modernFactory = new ModernFactory();
+const modernTable = modernFactory.createTable();
+console.log(modernTable.showRegularOffer()); // "modern table itself costs $399"
+console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any chair cost $499, retro chair itself costs $199"
 ```
 
 ## <a name="adapter">Adapter</a> [structural] [&#8657;](#list)
