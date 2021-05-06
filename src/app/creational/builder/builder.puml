@@ -20,7 +20,7 @@ class Director <OPT> {
 
 class Contractor <PRE> {
   - house: House
-    constructor() {}
+  + constructor()
   + buildWithElevator(): void
   + buildWithPool((size: string): void
   + putHouseIntoUse(): House

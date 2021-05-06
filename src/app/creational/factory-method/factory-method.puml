@@ -7,7 +7,7 @@ skinparam class {
 }
 
 interface Masterpiece {
-  + create(): string
+  create(): string
 }
 
 abstract class Studio {

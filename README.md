@@ -5,7 +5,7 @@
 | [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) |
 | [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) |
 | [Factory method](#factory-method) | [Composite](#composite) | [Iterator](#iterator) |
-| [Prototype](#prototype) | [Decorator](#decorator) | [Mediator](#mediator) |
+| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Mediator](#mediator) |
 | [Singleton](#singleton) | [Facade](#facade) | [Memento](#memento) |
 | | [Flyweight](#flyweight) | [Observer](#observer) |
 | | [Proxy](#proxy) | [State](#state) |
@@ -72,7 +72,7 @@ Builder provides an interface to create objects in stages.
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/117216443-1033df00-ae00-11eb-8d2b-26c4421df656.png)
+![builder](https://user-images.githubusercontent.com/21959354/117360268-dc68c000-aeb8-11eb-9f1a-6d93b75a1042.png)
 
 #### Client code:
 
@@ -181,7 +181,7 @@ Factory method provides an interface to create objects using subclasses.
 
 #### UML diagram:
 
-![factory-method](https://user-images.githubusercontent.com/21959354/117216444-1033df00-ae00-11eb-994c-558a0138a306.png)
+![factory-method](https://user-images.githubusercontent.com/21959354/117355413-d7087700-aeb2-11eb-861c-0faedd2e674b.png)
 
 #### Client code:
 
@@ -193,6 +193,20 @@ console.log(painting); // "created a painting"
 const sculptorStudio = new SculptorStudio();
 const sculpture = sculptorStudio.createMasterpiece();
 console.log(sculpture); // "created a sculpture"
+```
+
+## <a name="fluent-interface">Fluent interface</a> [creational] [&#8657;](#list)
+
+None
+
+#### UML diagram:
+
+![fluent-interface](localhost:4200)
+
+#### Client code:
+
+```ts
+
 ```
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
@@ -265,20 +279,6 @@ None
 
 ```
 
-## <a name="prototype">Prototype</a> [creational] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![prototype](localhost:4200)
-
-#### Client code:
-
-```ts
-
-```
-
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)
 
 None
@@ -295,16 +295,21 @@ None
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
 
-None
+Singleton allows you to have only one instance of a class and provide global access to it.
 
 #### UML diagram:
 
-![singleton](localhost:4200)
+![singleton](https://user-images.githubusercontent.com/21959354/117360177-c0fdb500-aeb8-11eb-9a47-6f2a1bf01acc.png)
 
 #### Client code:
 
 ```ts
+const king = King.getInstance();
+const sameKing = King.getInstance();
 
+console.log(king === sameKing); // true
+console.log(king.showKingName()); // "Louis XX"
+console.log(sameKing.showKingName()); // "Louis XX"
 ```
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)
@@ -334,11 +339,11 @@ Strategy defines a family of algorithms (for a given context) encapsulated them 
 ```ts
 const team = new Team(new DefensiveStrategy());
 const defensiveLineup = team.prepareLineup();
-console.error(defensiveLineup); // ["Tia", "Rocket"]
+console.error(defensiveLineup); // ["Pavard", "Lewandowski"]
 
 team.setStrategy(new OffensiveStrategy());
 const offensiveLineup = team.prepareLineup();
-console.error(offensiveLineup); // ["Ahito", "Rocket"]
+console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
 ```
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)

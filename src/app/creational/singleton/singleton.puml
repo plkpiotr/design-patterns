@@ -6,4 +6,15 @@ skinparam class {
   borderColor dimgrey
 }
 
+class King <PRE> {
+  - {static} instance: King
+  - constructor()
+  + {static} getInstance(): King
+  + showKingName(): string
+}
+
+King <- King
+
 @enduml
+
+` showKingName() function is a business logic

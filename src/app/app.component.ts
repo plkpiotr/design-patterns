@@ -11,6 +11,7 @@ import { PainterStudio } from './creational/factory-method/painter-studio.class'
 import { SculptorStudio } from './creational/factory-method/sculptor-studio.class';
 import { RetroFactory } from './creational/abstract-factory/retro-factory.class';
 import { ModernFactory } from './creational/abstract-factory/modern-factory.class';
+import { King } from './creational/singleton/king.class';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent {
     AppComponent.presentBuilder();
     AppComponent.presentFactoryMethod();
     AppComponent.presentDecorator();
+    AppComponent.presentSingleton();
     AppComponent.presentStrategy();
   }
 
@@ -80,6 +82,15 @@ export class AppComponent {
     const jeweller = new Jeweller(clothingStore);
     const withBracelet = jeweller.wear();
     console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
+  }
+
+  private static presentSingleton(): void {
+    const king = King.getInstance();
+    const sameKing = King.getInstance();
+
+    console.log(king === sameKing); // true
+    console.log(king.showKingName()); // "Louis XX"
+    console.log(sameKing.showKingName()); // "Louis XX"
   }
 
   private static presentStrategy(): void {
