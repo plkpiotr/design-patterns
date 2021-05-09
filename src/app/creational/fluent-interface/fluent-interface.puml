@@ -11,7 +11,7 @@ interface Fluent {
   withTracks(tracks: string[]): Label
 }
 
-class Label {
+class Label <PRE> {
   - album: Album
   constructor(album?: Album)
   + withName(name: string): Label
