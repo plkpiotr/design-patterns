@@ -7,35 +7,36 @@ skinparam class {
 }
 
 interface Builder {
-  buildWithElevator(): void
-  buildWithPool(size: string): void
+  withEngine(engine: string): void
+  withPrice(price: number): void
 }
 
-class Director <OPT> {
+class Manager <OPT> {
   - builder: Builder
   + setBuilder(builder: Builder): void
   + manageBasicVersion(): void
   + managePremiumVersion(): void
 }
 
-class Contractor <PRE> {
-  - house: House
-  + constructor()
-  + buildWithElevator(): void
-  + buildWithPool((size: string): void
-  + putHouseIntoUse(): House
+class Designer <PRE> {
+  - car: Car
+    constructor()
+  + withEngine(engine: string): void
+  + withPrice(price: number): void
+  + putCarIntoUse(): Car
 }
 
-class House {
-  - equipments: string[]
-  + addEquipment(equipment: string): void
-  + getEquipments(): string[]
+class Car {
+  - engine: string
+  - price: number
+  + setEngine(engine: string): void
+  + setPrice(price: number): void
 }
 
-Builder <-o Director
-Builder <|.. Contractor
-Contractor -> House
+Builder <-o Manager
+Builder <|.. Designer
+Designer -> Car
 
 @enduml
 
-' Director class is optional
+' Manager class is optional

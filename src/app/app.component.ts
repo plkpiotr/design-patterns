@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Woman } from './structural/decorator/woman.class';
 import { Jeweller } from './structural/decorator/jeweller.class';
 import { ClothingStore } from './structural/decorator/clothing-store.class';
-import { Director } from './creational/builder/director.class';
-import { Contractor } from './creational/builder/contractor.class';
+import { Manager } from './creational/builder/manager.class';
+import { Designer } from './creational/builder/designer.class';
 import { Team } from './behavioral/strategy/team.class';
 import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.class';
 import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.class';
@@ -42,22 +42,22 @@ export class AppComponent {
   }
 
   private static presentBuilder(): void {
-    const director = new Director();
-    const contractor = new Contractor();
-    director.setBuilder(contractor);
+    const manager = new Manager();
+    const designer = new Designer();
+    manager.setBuilder(designer);
 
-    director.manageBasicVersion();
-    const basicHouse = contractor.putHouseIntoUse();
-    console.log(basicHouse.getEquipments()); // ["elevator"]
+    manager.manageBasicVersion();
+    const basicCar = designer.putCarIntoUse();
+    console.log(basicCar); // Car {engine: "1.5 VVT-i", price: 59000}
 
-    director.managePremiumVersion();
-    const premiumHouse = contractor.putHouseIntoUse();
-    console.log(premiumHouse.getEquipments()); // ["elevator", "big pool", "small pool"]
+    manager.managePremiumVersion();
+    const premiumCar = designer.putCarIntoUse();
+    console.log(premiumCar); // Car {engine: "1.8 D-4D", price: 72000}
 
-    contractor.buildWithPool('medium');
-    contractor.buildWithElevator();
-    const customHouse = contractor.putHouseIntoUse();
-    console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
+    designer.withPrice(63000);
+    designer.withEngine('1.6 D-4D');
+    const customCar = designer.putCarIntoUse();
+    console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
   }
 
   private static presentFactoryMethod(): void {

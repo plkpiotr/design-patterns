@@ -72,27 +72,27 @@ Builder provides an interface to create objects in stages.
 
 #### UML diagram:
 
-![builder](https://user-images.githubusercontent.com/21959354/117360268-dc68c000-aeb8-11eb-9f1a-6d93b75a1042.png)
+![builder](https://user-images.githubusercontent.com/21959354/117540257-a0e00a00-b00e-11eb-93e8-91d3a5668dfc.png)
 
 #### Client code:
 
 ```ts
-const director = new Director();
-const contractor = new Contractor();
-director.setBuilder(contractor);
+const manager = new Manager();
+const designer = new Designer();
+manager.setBuilder(designer);
 
-director.manageBasicVersion();
-const basicHouse = contractor.putHouseIntoUse();
-console.log(basicHouse.getEquipments()); // ["elevator"]
+manager.manageBasicVersion();
+const basicCar = designer.putCarIntoUse();
+console.log(basicCar); // Car {engine: "1.5 VVT-i", price: 59000}
 
-director.managePremiumVersion();
-const premiumHouse = contractor.putHouseIntoUse();
-console.log(premiumHouse.getEquipments()); // ["elevator", "big pool", "small pool"]
+manager.managePremiumVersion();
+const premiumCar = designer.putCarIntoUse();
+console.log(premiumCar); // Car {engine: "1.8 D-4D", price: 72000}
 
-contractor.buildWithPool('medium');
-contractor.buildWithElevator();
-const customHouse = contractor.putHouseIntoUse();
-console.log(customHouse.getEquipments()); // ["medium pool", "elevator"]
+designer.withPrice(63000);
+designer.withEngine('1.6 D-4D');
+const customCar = designer.putCarIntoUse();
+console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
 ```
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
@@ -197,7 +197,7 @@ console.log(sculpture); // "created a sculpture"
 
 ## <a name="fluent-interface">Fluent interface</a> [creational] [&#8657;](#list)
 
-None
+Fluent interface allows you to create and edit objects using method chaining.
 
 #### UML diagram:
 
@@ -295,7 +295,7 @@ None
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
 
-Singleton allows you to have only one instance of a class and provide global access to it.
+Singleton allows you to have only one instance of a class and provides global access to it.
 
 #### UML diagram:
 

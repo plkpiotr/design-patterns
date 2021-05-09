@@ -1,4 +1,4 @@
 export interface Builder {
-  buildWithElevator(): void;
-  buildWithPool(size: string): void;
+  withEngine(engine: string): void;
+  withPrice(price: number): void;
 }
