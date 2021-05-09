@@ -73,13 +73,11 @@ export class AppComponent {
   }
 
   private static presentFluentInterface(): void {
-    const album = new Label()
-      .withName('Recovery')
+    const album = new Label().withName('Recovery')
       .withTracks(['Not Afraid', 'On Fire'])
       .release();
 
-    const deluxeAlbum = new Label(album)
-      .withTracks(['Not Afraid', 'On Fire', 'So Bad'])
+    const deluxeAlbum = new Label(album).withTracks(['Not Afraid', 'On Fire', 'So Bad'])
       .release();
 
     console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
