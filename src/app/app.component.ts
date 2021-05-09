@@ -12,6 +12,7 @@ import { SculptorStudio } from './creational/factory-method/sculptor-studio.clas
 import { RetroFactory } from './creational/abstract-factory/retro-factory.class';
 import { ModernFactory } from './creational/abstract-factory/modern-factory.class';
 import { King } from './creational/singleton/king.class';
+import { Label } from './creational/fluent-interface/label.class';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent {
     AppComponent.presentAbstractFactory();
     AppComponent.presentBuilder();
     AppComponent.presentFactoryMethod();
+    AppComponent.presentFluentInterface();
     AppComponent.presentDecorator();
     AppComponent.presentSingleton();
     AppComponent.presentStrategy();
@@ -68,6 +70,20 @@ export class AppComponent {
     const sculptorStudio = new SculptorStudio();
     const sculpture = sculptorStudio.createMasterpiece();
     console.log(sculpture); // "created a sculpture"
+  }
+
+  private static presentFluentInterface(): void {
+    const album = new Label()
+      .withName('Recovery')
+      .withTracks(['Not Afraid', 'On Fire'])
+      .release();
+
+    const deluxeAlbum = new Label(album)
+      .withTracks(['Not Afraid', 'On Fire', 'So Bad'])
+      .release();
+
+    console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
+    console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
   }
 
   private static presentDecorator(): void {

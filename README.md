@@ -195,18 +195,28 @@ const sculpture = sculptorStudio.createMasterpiece();
 console.log(sculpture); // "created a sculpture"
 ```
 
-## <a name="fluent-interface">Fluent interface</a> [creational] [&#8657;](#list)
+## <a name="fluent-interface">Fluent interface</a> [creational*] [&#8657;](#list)
 
 Fluent interface allows you to create and edit objects using method chaining.
 
 #### UML diagram:
 
-![fluent-interface](localhost:4200)
+![fluent-interface](https://user-images.githubusercontent.com/21959354/117580632-2c35ca00-b0f9-11eb-92b1-8f6cf04030bc.png)
 
 #### Client code:
 
 ```ts
+const album = new Label()
+  .withName('Recovery')
+  .withTracks(['Not Afraid', 'On Fire'])
+  .release();
 
+const deluxeAlbum = new Label(album)
+  .withTracks(['Not Afraid', 'On Fire', 'So Bad'])
+  .release();
+
+console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
+console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
 ```
 
 ## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)

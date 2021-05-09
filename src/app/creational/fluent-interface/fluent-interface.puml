@@ -6,4 +6,30 @@ skinparam class {
   borderColor dimgrey
 }
 
+interface Fluent {
+  withName(name: string): Label
+  withTracks(tracks: string[]): Label
+}
+
+class Label {
+  - album: Album
+  constructor(album?: Album)
+  + withName(name: string): Label
+  + withTracks(tracks: string[]): Label
+  + release(): Album
+}
+
+class Album {
+  - name: string
+  - tracks: string[]
+  constructor(album?: Album)
+  + setName(name: string): void
+  + setTracks(tracks: string[]): void
+}
+
+Fluent <|.. Label
+Label -> Album
+
 @enduml
+
+' It is possible to add Director class
