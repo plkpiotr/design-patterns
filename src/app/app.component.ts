@@ -23,9 +23,9 @@ export class AppComponent {
   constructor() {
     AppComponent.presentAbstractFactory();
     AppComponent.presentBuilder();
+    AppComponent.presentDecorator();
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
-    AppComponent.presentDecorator();
     AppComponent.presentSingleton();
     AppComponent.presentStrategy();
   }
