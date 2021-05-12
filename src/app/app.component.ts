@@ -13,6 +13,9 @@ import { RetroFactory } from './creational/abstract-factory/retro-factory.class'
 import { ModernFactory } from './creational/abstract-factory/modern-factory.class';
 import { King } from './creational/singleton/king.class';
 import { Label } from './creational/fluent-interface/label.class';
+import { Movie } from './structural/adapter/movie.class';
+import { Remake } from './structural/adapter/remake.class';
+import { Adapter } from './structural/adapter/adapter.class';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +25,7 @@ import { Label } from './creational/fluent-interface/label.class';
 export class AppComponent {
   constructor() {
     AppComponent.presentAbstractFactory();
+    AppComponent.presentAdapter();
     AppComponent.presentBuilder();
     AppComponent.presentDecorator();
     AppComponent.presentFactoryMethod();
@@ -41,6 +45,17 @@ export class AppComponent {
     const modernTable = modernFactory.createTable();
     console.log(modernTable.showRegularOffer()); // "modern table itself costs $399"
     console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any chair cost $499, retro chair itself costs $199"
+  }
+
+  private static presentAdapter(): void {
+    const movie = new Movie();
+    console.warn(movie.displayVGA()); // [640, 480]
+
+    const remake = new Remake();
+    console.warn(remake.displayHD()); // [1920, 1080]
+
+    const adaptedRemake = new Adapter(remake);
+    console.warn(adaptedRemake.displayVGA()); // [640, 360]
   }
 
   private static presentBuilder(): void {

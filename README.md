@@ -40,16 +40,23 @@ console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any
 
 ## <a name="adapter">Adapter</a> [structural] [&#8657;](#list)
 
-None
+Adapter allows you to adapt an object with incompatible interface to another one.
 
 #### UML diagram:
 
-![adapter](localhost:4200)
+![adapter](https://user-images.githubusercontent.com/21959354/118035037-00217f80-b36b-11eb-9778-1f3cf0284ed1.png)
 
 #### Client code:
 
 ```ts
+const movie = new Movie();
+console.warn(movie.displayVGA()); // [640, 480]
 
+const remake = new Remake();
+console.warn(remake.displayHD()); // [1920, 1080]
+
+const adaptedRemake = new Adapter(remake);
+console.warn(adaptedRemake.displayVGA()); // [640, 360]
 ```
 
 ## <a name="bridge">Bridge</a> [structural] [&#8657;](#list)

@@ -6,4 +6,22 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
+class Movie <PRE> {
+  + displayVGA(): [number, number]
+}
+
+class Adapter <PRE> {
+  - adaptation: Remake
+  constructor(adaptation: Remake)
+  + displayVGA(): [number,  number]
+  - adapt(resolution: [number, number]): [number, number]
+}
+
+class Remake <PRE> {
+  + displayHD(): [number, number]
+}
+
+Movie <|-- Adapter
+Adapter -> Remake
+
 @enduml
