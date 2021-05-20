@@ -3,8 +3,10 @@ export class Album {
   private tracks: string[];
 
   constructor(album?: Album) {
-    this.name = album.name;
-    this.tracks = album.tracks;
+    if (album !== undefined) {
+      this.name = album.name;
+      this.tracks = album.tracks;
+    }
   }
 
   public setName(name: string): void {

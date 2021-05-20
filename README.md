@@ -61,16 +61,30 @@ console.warn(adaptedRemake.displayVGA()); // [640, 360]
 
 ## <a name="bridge">Bridge</a> [structural] [&#8657;](#list)
 
-None
+Bridge allows you to divide complicated class into its abstraction and implementation (to prevent creation of multiple redundant classes).
 
 #### UML diagram:
 
-![bridge](localhost:4200)
+![bridge](https://user-images.githubusercontent.com/21959354/119036023-92033b00-b9b0-11eb-95e6-c5cdb6a96a16.png)
 
 #### Client code:
 
 ```ts
+const flatScreen = new FlatScreen();
+let embeddedControl = new EmbeddedControl(flatScreen);
+let remoteControl = new RemoteControl(flatScreen);
 
+console.warn(embeddedControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+console.warn(remoteControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+console.warn(remoteControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
+
+const decoder = new Decoder();
+embeddedControl = new EmbeddedControl(decoder);
+remoteControl = new RemoteControl(decoder);
+
+console.warn(embeddedControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+console.warn(remoteControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
 ```
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
@@ -343,7 +357,7 @@ None
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
 
-Strategy defines a family of algorithms (for a given context) encapsulated them in the form of separated classes.
+Strategy defines a family of algorithms (for a given context) encapsulating them in the form of separated classes.
 
 #### UML diagram:
 

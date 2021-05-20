@@ -6,4 +6,33 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
+class EmbeddedControl <XOR> {
+  # device: Device
+  constructor(protected device: Device)
+  + turnVolumeUp(): string
+}
+
+class RemoteControl <XOR> {
+  + addChannelToFavorites(): string
+}
+
+interface Device {
+  blink(): string
+}
+
+class FlatScreen <PRE> {
+  + blink(): string
+}
+
+class Decoder <PRE> {
+  + blink(): string
+}
+
+EmbeddedControl <|-- RemoteControl
+
+EmbeddedControl o-> Device
+
+Device <|.. FlatScreen
+Device <|.. Decoder
+
 @enduml

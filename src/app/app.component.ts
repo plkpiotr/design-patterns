@@ -16,6 +16,10 @@ import { Label } from './creational/fluent-interface/label.class';
 import { Movie } from './structural/adapter/movie.class';
 import { Remake } from './structural/adapter/remake.class';
 import { Adapter } from './structural/adapter/adapter.class';
+import { FlatScreen } from './structural/bridge/flat-screen.class';
+import { EmbeddedControl } from './structural/bridge/embedded-control.class';
+import { RemoteControl } from './structural/bridge/remote-control.class';
+import { Decoder } from './structural/bridge/decoder.class';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +30,7 @@ export class AppComponent {
   constructor() {
     AppComponent.presentAbstractFactory();
     AppComponent.presentAdapter();
+    AppComponent.presentBridge();
     AppComponent.presentBuilder();
     AppComponent.presentDecorator();
     AppComponent.presentFactoryMethod();
@@ -58,6 +63,24 @@ export class AppComponent {
     console.warn(adaptedRemake.displayVGA()); // [640, 360]
   }
 
+  private static presentBridge(): void {
+    const flatScreen = new FlatScreen();
+    let embeddedControl = new EmbeddedControl(flatScreen);
+    let remoteControl = new RemoteControl(flatScreen);
+
+    console.warn(embeddedControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+    console.warn(remoteControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+    console.warn(remoteControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
+
+    const decoder = new Decoder();
+    embeddedControl = new EmbeddedControl(decoder);
+    remoteControl = new RemoteControl(decoder);
+
+    console.warn(embeddedControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+    console.warn(remoteControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+    console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
+  }
+
   private static presentBuilder(): void {
     const manager = new Manager();
     const designer = new Designer();
@@ -75,6 +98,20 @@ export class AppComponent {
     designer.withEngine('1.6 D-4D');
     const customCar = designer.putCarIntoUse();
     console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
+  }
+
+  private static presentDecorator(): void {
+    const woman = new Woman();
+    const withCasualClothes = woman.wear();
+    console.warn(withCasualClothes); // "worn casual clothes"
+
+    const clothingStore = new ClothingStore(woman);
+    const withScarf = clothingStore.wear();
+    console.warn(withScarf); // "worn casual clothes, scarf"
+
+    const jeweller = new Jeweller(clothingStore);
+    const withBracelet = jeweller.wear();
+    console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
   }
 
   private static presentFactoryMethod(): void {
@@ -97,20 +134,6 @@ export class AppComponent {
 
     console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
     console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
-  }
-
-  private static presentDecorator(): void {
-    const woman = new Woman();
-    const withCasualClothes = woman.wear();
-    console.warn(withCasualClothes); // "worn casual clothes"
-
-    const clothingStore = new ClothingStore(woman);
-    const withScarf = clothingStore.wear();
-    console.warn(withScarf); // "worn casual clothes, scarf"
-
-    const jeweller = new Jeweller(clothingStore);
-    const withBracelet = jeweller.wear();
-    console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
   }
 
   private static presentSingleton(): void {
