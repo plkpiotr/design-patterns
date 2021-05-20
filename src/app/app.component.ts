@@ -66,17 +66,17 @@ export class AppComponent {
   private static presentBridge(): void {
     const flatScreen = new FlatScreen();
     let embeddedControl = new EmbeddedControl(flatScreen);
-    let remoteControl = new RemoteControl(flatScreen);
+    let remotelyControl = new RemoteControl(flatScreen);
     console.warn(embeddedControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-    console.warn(remoteControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-    console.warn(remoteControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
+    console.warn(remotelyControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+    console.warn(remotelyControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
 
     const decoder = new Decoder();
     embeddedControl = new EmbeddedControl(decoder);
-    remoteControl = new RemoteControl(decoder);
+    remotelyControl = new RemoteControl(decoder);
     console.warn(embeddedControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-    console.warn(remoteControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-    console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
+    console.warn(remotelyControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+    console.warn(remotelyControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
   }
 
   private static presentBuilder(): void {
