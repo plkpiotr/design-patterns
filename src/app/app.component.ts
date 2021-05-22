@@ -22,6 +22,9 @@ import { RemoteControl } from './structural/bridge/remote-control.class';
 import { Decoder } from './structural/bridge/decoder.class';
 import { Department } from './structural/composite/department.class';
 import { Employee } from './structural/composite/employee.class';
+import { Barista } from './structural/facade/barista.class';
+import { Cook } from './structural/facade/cook.class';
+import { Waiter } from './structural/facade/waiter.class';
 
 @Component({
   selector: 'app-root',
@@ -38,6 +41,7 @@ export class AppComponent {
     AppComponent.presentBuilder();
     AppComponent.presentComposite();
     AppComponent.presentDecorator();
+    AppComponent.presentFacade();
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
     AppComponent.presentSingleton();
@@ -133,6 +137,16 @@ export class AppComponent {
     const jeweller = new Jeweller(clothingStore);
     const withBracelet = jeweller.wear();
     console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
+  }
+
+  private static presentFacade(): void {
+    const firstWaiter = new Waiter();
+    console.warn(firstWaiter.fillFullOrder()); // "dinner, coffee"
+
+    const cook = new Cook();
+    const barista = new Barista();
+    const secondWaiter = new Waiter(cook, barista);
+    console.warn(secondWaiter.fillPartialOrder()); // "coffee"
   }
 
   private static presentFactoryMethod(): void {

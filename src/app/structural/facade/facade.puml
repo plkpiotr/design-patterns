@@ -6,19 +6,23 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
-class Waiter {
+class Waiter <PRE> {
   - cook: Cook
   - barista: Barista
   constructor(cook?: Cook, barista?: Barista)
-  + fillOrder(): string
+  + fillFullOrder(): string
+  + fillPartialOrder(): string
 }
 
-class Cook {
-
+class Cook <DEP> {
+  + prepareDinner(): string
 }
 
-class Barista {
-
+class Barista <DEP> {
+  + prepareCoffee(): string
 }
+
+Waiter ..> Cook
+Waiter ..> Barista
 
 @enduml

@@ -65,7 +65,7 @@ Bridge allows you to divide complicated class into its abstraction and implement
 
 #### UML diagram:
 
-![bridge](https://user-images.githubusercontent.com/21959354/119036023-92033b00-b9b0-11eb-95e6-c5cdb6a96a16.png)
+![bridge](https://user-images.githubusercontent.com/21959354/119240659-71beb200-bb51-11eb-83f9-eae887a7b339.png)
 
 #### Client code:
 
@@ -148,7 +148,7 @@ Composite allows you to treat distinct entities like nested objects.
 
 #### UML diagram:
 
-![composite](https://user-images.githubusercontent.com/21959354/119236312-0536b980-bb37-11eb-99ce-95230e0f1d60.png)
+![composite](https://user-images.githubusercontent.com/21959354/119240658-71261b80-bb51-11eb-96fc-3f3f5d4f5ce2.png)
 
 #### Client code:
 
@@ -176,7 +176,7 @@ Decorator allows you to add a new functionality to an existing class.
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/117216445-10cc7580-ae00-11eb-8dec-f275c4ba28af.png)
+![decorator](https://user-images.githubusercontent.com/21959354/119240657-71261b80-bb51-11eb-929f-5663eab0d866.png)
 
 #### Client code:
 
@@ -196,16 +196,22 @@ console.warn(withBracelet); // "worn casual clothes, scarf, bracelet"
 
 ## <a name="facade">Facade</a> [structural] [&#8657;](#list)
 
-None
+Facade allows you to separate out external logic from complex logic.
 
 #### UML diagram:
 
-![facade](localhost:4200)
+![facade](https://user-images.githubusercontent.com/21959354/119240865-f0681f00-bb52-11eb-90dc-d66673f2d1dd.png)
 
 #### Client code:
 
 ```ts
+    const firstWaiter = new Waiter();
+console.warn(firstWaiter.fillFullOrder()); // "dinner, coffee"
 
+const cook = new Cook();
+const barista = new Barista();
+const secondWaiter = new Waiter(cook, barista);
+console.warn(secondWaiter.fillPartialOrder()); // "coffee"
 ```
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
@@ -373,7 +379,7 @@ Strategy allows you to define a family of algorithms (for a given context) encap
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/117216438-0e6a1b80-ae00-11eb-85d4-4d5d8d90cc81.png)
+![strategy](https://user-images.githubusercontent.com/21959354/119240660-71beb200-bb51-11eb-8a61-dcd7bb60bb7c.png)
 
 #### Client code:
 
