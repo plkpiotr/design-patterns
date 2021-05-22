@@ -8,7 +8,7 @@ skinparam class {
 
 class EmbeddedControl <XOR> {
   # device: Device
-  constructor(protected device: Device)
+  constructor(device: Device)
   + turnVolumeUp(): string
 }
 

@@ -16,7 +16,7 @@ class Woman <PRE> {
 
 class Shop {
   - person: Person
-  constructor(private person: Person)
+  constructor(person: Person)
   + wear(): string
 }
 

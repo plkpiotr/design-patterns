@@ -7,7 +7,18 @@ skinparam class {
 }
 
 class Waiter {
-  #
+  - cook: Cook
+  - barista: Barista
+  constructor(cook?: Cook, barista?: Barista)
+  + fillOrder(): string
+}
+
+class Cook {
+
+}
+
+class Barista {
+
 }
 
 @enduml

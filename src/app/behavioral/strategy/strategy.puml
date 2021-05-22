@@ -12,7 +12,7 @@ interface Strategy {
 
 class Team <PRE> {
   - strategy: Strategy
-  constructor(private strategy: Strategy)
+  constructor(strategy: Strategy)
   + setStrategy(strategy: Strategy): void
   + prepareLineup(): string[]
 }

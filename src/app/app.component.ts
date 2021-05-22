@@ -29,6 +29,8 @@ import { Employee } from './structural/composite/employee.class';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public title = 'Results of design patterns are visible in the browser console 😊';
+
   constructor() {
     AppComponent.presentAbstractFactory();
     AppComponent.presentAdapter();
