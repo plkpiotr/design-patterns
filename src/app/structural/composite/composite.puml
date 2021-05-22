@@ -6,4 +6,24 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
+abstract class Entity {
+  # entity: Entity
+  {abstract} showSalary(): number
+  + setEntity(entity: Entity): void
+}
+
+class Employee <PRE> {
+  + showSalary(): number
+}
+
+class Department <PRE> {
+  # entities: Entity[]
+  + addEntity(entity: Entity): void
+  + showSalary(): number
+}
+
+Entity <|.. Employee
+Entity <|.. Department
+Entity <--o Department
+
 @enduml

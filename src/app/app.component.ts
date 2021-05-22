@@ -20,6 +20,8 @@ import { FlatScreen } from './structural/bridge/flat-screen.class';
 import { EmbeddedControl } from './structural/bridge/embedded-control.class';
 import { RemoteControl } from './structural/bridge/remote-control.class';
 import { Decoder } from './structural/bridge/decoder.class';
+import { Department } from './structural/composite/department.class';
+import { Employee } from './structural/composite/employee.class';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +34,7 @@ export class AppComponent {
     AppComponent.presentAdapter();
     AppComponent.presentBridge();
     AppComponent.presentBuilder();
+    AppComponent.presentComposite();
     AppComponent.presentDecorator();
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
@@ -66,17 +69,17 @@ export class AppComponent {
   private static presentBridge(): void {
     const flatScreen = new FlatScreen();
     let embeddedControl = new EmbeddedControl(flatScreen);
-    let remotelyControl = new RemoteControl(flatScreen);
+    let remoteControl = new RemoteControl(flatScreen);
     console.warn(embeddedControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-    console.warn(remotelyControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-    console.warn(remotelyControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
+    console.warn(remoteControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+    console.warn(remoteControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
 
     const decoder = new Decoder();
     embeddedControl = new EmbeddedControl(decoder);
-    remotelyControl = new RemoteControl(decoder);
+    remoteControl = new RemoteControl(decoder);
     console.warn(embeddedControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-    console.warn(remotelyControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-    console.warn(remotelyControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
+    console.warn(remoteControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+    console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
   }
 
   private static presentBuilder(): void {
@@ -96,6 +99,24 @@ export class AppComponent {
     designer.withEngine('1.6 D-4D');
     const customCar = designer.putCarIntoUse();
     console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
+  }
+
+  private static presentComposite(): void {
+    const ceo = new Employee();
+    console.warn(ceo.showSalary()); // 3000
+
+    const department = new Department();
+    department.addEntity(ceo);
+    const manager = new Employee();
+    department.addEntity(manager);
+    console.warn(department.showSalary()); // 6000
+
+    const section = new Department();
+    department.addEntity(section);
+    const worker = new Employee();
+    section.addEntity(worker);
+    console.warn(section.showSalary()); // 3000
+    console.warn(department.showSalary()); // 9000
   }
 
   private static presentDecorator(): void {
@@ -146,10 +167,10 @@ export class AppComponent {
   private static presentStrategy(): void {
     const team = new Team(new DefensiveStrategy());
     const defensiveLineup = team.prepareLineup();
-    console.error(defensiveLineup); // ["Tia", "Rocket"]
+    console.error(defensiveLineup); // ["Pavard", "Lewandowski"]
 
     team.setStrategy(new OffensiveStrategy());
     const offensiveLineup = team.prepareLineup();
-    console.error(offensiveLineup); // ["Ahito", "Rocket"]
+    console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
   }
 }

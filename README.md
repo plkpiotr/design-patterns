@@ -72,17 +72,17 @@ Bridge allows you to divide complicated class into its abstraction and implement
 ```ts
 const flatScreen = new FlatScreen();
 let embeddedControl = new EmbeddedControl(flatScreen);
-let remotelyControl = new RemoteControl(flatScreen);
+let remoteControl = new RemoteControl(flatScreen);
 console.warn(embeddedControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-console.warn(remotelyControl.turnVolumeUp()); // "red light blinked, turned the volume up"
-console.warn(remotelyControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
+console.warn(remoteControl.turnVolumeUp()); // "red light blinked, turned the volume up"
+console.warn(remoteControl.addChannelToFavorites()); // "red light blinked, added channel to favorites"
 
 const decoder = new Decoder();
 embeddedControl = new EmbeddedControl(decoder);
-remotelyControl = new RemoteControl(decoder);
+remoteControl = new RemoteControl(decoder);
 console.warn(embeddedControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-console.warn(remotelyControl.turnVolumeUp()); // "green light blinked, turned the volume up"
-console.warn(remotelyControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
+console.warn(remoteControl.turnVolumeUp()); // "green light blinked, turned the volume up"
+console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, added channel to favorites"
 ```
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
@@ -144,16 +144,30 @@ None
 
 ## <a name="composite">Composite</a> [behavioral] [&#8657;](#list)
 
-None
+Composite allows you to treat distinct entities like nested objects.
 
 #### UML diagram:
 
-![composite](localhost:4200)
+![composite](https://user-images.githubusercontent.com/21959354/119236312-0536b980-bb37-11eb-99ce-95230e0f1d60.png)
 
 #### Client code:
 
 ```ts
+const ceo = new Employee();
+console.warn(ceo.showSalary()); // 3000
 
+const department = new Department();
+department.addEntity(ceo);
+const manager = new Employee();
+department.addEntity(manager);
+console.warn(department.showSalary()); // 6000
+
+const section = new Department();
+department.addEntity(section);
+const worker = new Employee();
+section.addEntity(worker);
+console.warn(section.showSalary()); // 3000
+console.warn(department.showSalary()); // 9000
 ```
 
 ## <a name="decorator">Decorator</a> [structural] [&#8657;](#list)
