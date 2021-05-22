@@ -17,7 +17,7 @@
 
 ## <a name="abstract-factory">Abstract factory</a> [creational] [&#8657;](#list)
 
-Abstract factory provides an interface to create objects from specific family.
+Abstract factory allows you to create related objects without specifying them concrete classes.
 
 #### UML diagram:
 
@@ -87,7 +87,7 @@ console.warn(remoteControl.addChannelToFavorites()); // "green light blinked, ad
 
 ## <a name="builder">Builder</a> [creational] [&#8657;](#list)
 
-Builder provides an interface to create objects in stages.
+Builder allows you to create objects in stages.
 
 #### UML diagram:
 
@@ -210,7 +210,7 @@ None
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
 
-Factory method provides an interface to create objects using subclasses.
+Factory method allows you to create objects using subclasses that can change a type of created object.
 
 #### UML diagram:
 
@@ -336,7 +336,7 @@ None
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
 
-Singleton allows you to have only one instance of a class and provides global access to it.
+Singleton allows you to have only one instance of a class and provide global access to it.
 
 #### UML diagram:
 
@@ -369,7 +369,7 @@ None
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
 
-Strategy defines a family of algorithms (for a given context) encapsulating them in the form of separated classes.
+Strategy allows you to define a family of algorithms (for a given context) encapsulating them in the form of separated classes.
 
 #### UML diagram:
 
