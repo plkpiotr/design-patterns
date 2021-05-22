@@ -2,9 +2,7 @@ import { Movie } from './movie.class';
 import { Remake } from './remake.class';
 
 export class Adapter extends Movie {
-  private adaptation: Remake;
-
-  constructor(adaptation: Remake) {
+  constructor(private adaptation: Remake) {
     super();
     this.adaptation = adaptation;
   }

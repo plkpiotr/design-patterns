@@ -1,5 +1,5 @@
 export abstract class Entity {
-  protected entity: Entity;
+  private entity: Entity;
 
   public abstract showSalary(): number;
 

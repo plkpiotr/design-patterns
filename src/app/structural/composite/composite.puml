@@ -7,7 +7,7 @@ skinparam class {
 }
 
 abstract class Entity {
-  # entity: Entity
+  - entity: Entity
   {abstract} showSalary(): number
   + setEntity(entity: Entity): void
 }
@@ -17,7 +17,7 @@ class Employee <PRE> {
 }
 
 class Department <PRE> {
-  # entities: Entity[]
+  - entities: Entity[]
   + addEntity(entity: Entity): void
   + showSalary(): number
 }

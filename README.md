@@ -1,6 +1,6 @@
 # <a name="list">Real-life design patterns with PlantUML diagrams</a>
 
-| Creational | Structural | Behavioral |
+| ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
 | :----: | :----: | :----: |
 | [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) |
 | [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) |

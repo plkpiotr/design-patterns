@@ -6,4 +6,8 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
+class Waiter {
+  #
+}
+
 @enduml

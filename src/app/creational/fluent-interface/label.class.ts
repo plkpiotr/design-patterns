@@ -2,10 +2,8 @@ import { Fluent } from './fluent.interface';
 import { Album } from './album.class';
 
 export class Label implements Fluent {
-  private album: Album;
-
-  constructor(album?: Album) {
-    this.album = album !== undefined ? new Album(album) : new Album();
+  constructor(private album?: Album) {
+    this.album = new Album(album) ?? new Album();
   }
 
   public withName(name: string): Label {

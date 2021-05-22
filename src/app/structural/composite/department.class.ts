@@ -1,7 +1,7 @@
 import { Entity } from './entity.class';
 
 export class Department extends Entity {
-  protected entities: Entity[] = [];
+  private entities: Entity[] = [];
 
   public addEntity(entity: Entity): void {
     this.entities.push(entity);
