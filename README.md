@@ -30,12 +30,12 @@ const retroFactory = new RetroFactory();
 const retroChair = retroFactory.createChair();
 const retroTable = retroFactory.createTable();
 console.log(retroTable.showRegularOffer()); // "retro table itself costs $499"
-console.log(retroTable.showSpecialOffer(retroChair)); // "retro table with any chair costs $599, retro chair itself costs $199"
+console.log(retroTable.showSpecialOffer(retroChair)); // "retro table with any chair cost $599, retro chair itself costs $199"
 
 const modernFactory = new ModernFactory();
 const modernTable = modernFactory.createTable();
 console.log(modernTable.showRegularOffer()); // "modern table itself costs $399"
-console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any chair costs $499, retro chair itself costs $199"
+console.log(modernTable.showSpecialOffer(retroChair)); // "modern table with any chair cost $499, retro chair itself costs $199"
 ```
 
 ## <a name="adapter">Adapter</a> [structural] [&#8657;](#list)
@@ -326,8 +326,8 @@ Proxy allows you to add a new functionality to an existing class and control acc
 const patient = new Patient();
 console.warn(patient.visitHospital()); // "hospital visited"
 
-const proxy = new PandemicPatient(patient);
-console.warn(proxy.visitHospital()); // "hands disinfected (access granted), hospital visited"
+const pandemicPatient = new PandemicPatient(patient);
+console.warn(pandemicPatient.visitHospital()); // "hands disinfected (access granted), hospital visited"
 ```
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)

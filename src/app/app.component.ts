@@ -178,8 +178,8 @@ export class AppComponent {
     const patient = new Patient();
     console.warn(patient.visitHospital()); // "hospital visited"
 
-    const proxy = new PandemicPatient(patient);
-    console.warn(proxy.visitHospital()); // "hands disinfected (access granted), hospital visited"
+    const pandemicPatient = new PandemicPatient(patient);
+    console.warn(pandemicPatient.visitHospital()); // "hands disinfected (access granted), hospital visited"
   }
 
   private static presentSingleton(): void {

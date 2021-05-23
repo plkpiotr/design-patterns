@@ -8,6 +8,6 @@ export class ModernTable implements Table {
 
   public showSpecialOffer(chair: Chair): string {
     const chairOffer = chair.showOffer();
-    return `modern table with any chair costs $499, ${chairOffer}`;
+    return `modern table with any chair cost $499, ${chairOffer}`;
   }
 }

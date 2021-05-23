@@ -8,6 +8,6 @@ export class RetroTable implements Table {
 
   public showSpecialOffer(chair: Chair): string {
     const chairOffer = chair.showOffer();
-    return `retro table with any chair costs $599, ${chairOffer}`;
+    return `retro table with any chair cost $599, ${chairOffer}`;
   }
 }
