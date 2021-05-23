@@ -10,8 +10,8 @@ class Waiter <PRE> {
   - cook: Cook
   - barista: Barista
   constructor(cook?: Cook, barista?: Barista)
-  + fillFullOrder(): string
-  + fillPartialOrder(): string
+  + fillOrder(): string
+  + fillDoubleOrder(): string
 }
 
 class Cook <DEP> {

@@ -7,8 +7,8 @@
 | [Factory method](#factory-method) | [Composite](#composite) | [Iterator](#iterator) |
 | [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Mediator](#mediator) |
 | [Singleton](#singleton) | [Facade](#facade) | [Memento](#memento) |
-| | [Flyweight](#flyweight) | [Observer](#observer) |
-| | [Proxy](#proxy) | [State](#state) |
+| | [Proxy](#proxy) | [Observer](#observer) |
+| | | [State](#state) |
 | | | [Strategy](#strategy) |
 | | | [Template method](#template-method) |
 | | | [Visitor](#visitor) |
@@ -200,18 +200,18 @@ Facade allows you to separate out external logic from complex logic.
 
 #### UML diagram:
 
-![facade](https://user-images.githubusercontent.com/21959354/119240865-f0681f00-bb52-11eb-90dc-d66673f2d1dd.png)
+![facade](https://user-images.githubusercontent.com/21959354/119241025-05917d80-bb54-11eb-9751-a1a7ad90f2db.png)
 
 #### Client code:
 
 ```ts
-    const firstWaiter = new Waiter();
-console.warn(firstWaiter.fillFullOrder()); // "dinner, coffee"
+const firstWaiter = new Waiter();
+console.warn(firstWaiter.fillOrder()); // "dinner, coffee"
 
 const cook = new Cook();
 const barista = new Barista();
 const secondWaiter = new Waiter(cook, barista);
-console.warn(secondWaiter.fillPartialOrder()); // "coffee"
+console.warn(secondWaiter.fillDoubleOrder()); // "dinner x2, coffee x2"
 ```
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
@@ -254,20 +254,6 @@ const deluxeAlbum = new Label(album).withTracks(['Not Afraid', 'On Fire', 'So Ba
 
 console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
 console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
-```
-
-## <a name="flyweight">Flyweight</a> [structural] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![flyweight](localhost:4200)
-
-#### Client code:
-
-```ts
-
 ```
 
 ## <a name="iterator">Iterator</a> [behavioral] [&#8657;](#list)

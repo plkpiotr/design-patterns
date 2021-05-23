@@ -7,13 +7,15 @@ export class Waiter {
     this.barista = barista ?? new Barista();
   }
 
-  public fillFullOrder(): string {
+  public fillOrder(): string {
     const dinner = this.cook.prepareDinner();
     const coffee = this.barista.prepareCoffee();
     return `${dinner}, ${coffee}`;
   }
 
-  public fillPartialOrder(): string {
-    return this.barista.prepareCoffee();
+  public fillDoubleOrder(): string {
+    const dinner = this.cook.prepareDinner();
+    const coffee = this.barista.prepareCoffee();
+    return `${dinner} x2, ${coffee} x2`;
   }
 }

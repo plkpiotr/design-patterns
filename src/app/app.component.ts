@@ -141,12 +141,12 @@ export class AppComponent {
 
   private static presentFacade(): void {
     const firstWaiter = new Waiter();
-    console.warn(firstWaiter.fillFullOrder()); // "dinner, coffee"
+    console.warn(firstWaiter.fillOrder()); // "dinner, coffee"
 
     const cook = new Cook();
     const barista = new Barista();
     const secondWaiter = new Waiter(cook, barista);
-    console.warn(secondWaiter.fillPartialOrder()); // "coffee"
+    console.warn(secondWaiter.fillDoubleOrder()); // "dinner x2, coffee x2"
   }
 
   private static presentFactoryMethod(): void {

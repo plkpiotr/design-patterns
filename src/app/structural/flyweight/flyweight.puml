@@ -1,9 +1,0 @@
-@startuml
-
-skinparam class {
-  backgroundColor lightgoldenrodyellow
-  arrowColor darkgoldenrod
-  borderColor darkgoldenrod
-}
-
-@enduml
