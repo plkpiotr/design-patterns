@@ -25,6 +25,8 @@ import { Employee } from './structural/composite/employee.class';
 import { Barista } from './structural/facade/barista.class';
 import { Cook } from './structural/facade/cook.class';
 import { Waiter } from './structural/facade/waiter.class';
+import { Patient } from './structural/proxy/patient.class';
+import { PandemicPatient } from './structural/proxy/pandemic-patient.class';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +46,7 @@ export class AppComponent {
     AppComponent.presentFacade();
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
+    AppComponent.presentProxy();
     AppComponent.presentSingleton();
     AppComponent.presentStrategy();
   }
@@ -167,8 +170,16 @@ export class AppComponent {
     const deluxeAlbum = new Label(album).withTracks(['Not Afraid', 'On Fire', 'So Bad'])
       .release();
 
-    console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
-    console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
+    console.log(album); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire"] }
+    console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"] }
+  }
+
+  private static presentProxy(): void {
+    const patient = new Patient();
+    console.warn(patient.visitHospital()); // "hospital visited"
+
+    const proxy = new PandemicPatient(patient);
+    console.warn(proxy.visitHospital()); // "hands disinfected (access granted), hospital visited"
   }
 
   private static presentSingleton(): void {

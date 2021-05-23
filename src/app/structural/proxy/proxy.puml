@@ -6,4 +6,24 @@ skinparam class {
   borderColor darkgoldenrod
 }
 
+interface Hospital {
+  visitHospital(): string
+}
+
+class Patient <PRE> {
+  + visitHospital(): string
+}
+
+class PandemicPatient <PRE> {
+  - patient: Patient
+  constructor(patient: Patient)
+  + visitHospital(): string
+  - disinfectHands(): string
+}
+
+Hospital <|.. Patient
+Hospital <|.. PandemicPatient
+
+Patient <-o PandemicPatient
+
 @enduml

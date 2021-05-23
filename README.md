@@ -172,7 +172,7 @@ console.warn(department.showSalary()); // 9000
 
 ## <a name="decorator">Decorator</a> [structural] [&#8657;](#list)
 
-Decorator allows you to add a new functionality to an existing class.
+Decorator allows you to add a new functionality to existing classes by wrapping the original code.
 
 #### UML diagram:
 
@@ -252,8 +252,8 @@ const album = new Label().withName('Recovery')
 const deluxeAlbum = new Label(album).withTracks(['Not Afraid', 'On Fire', 'So Bad'])
   .release();
 
-console.log(album); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire"]}
-console.log(deluxeAlbum); // Album {name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"]}
+console.log(album); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire"] }
+console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"] }
 ```
 
 ## <a name="iterator">Iterator</a> [behavioral] [&#8657;](#list)
@@ -314,16 +314,20 @@ None
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)
 
-None
+Proxy allows you to add a new functionality to an existing class and control access to it.
 
 #### UML diagram:
 
-![proxy](localhost:4200)
+![proxy](https://user-images.githubusercontent.com/21959354/119268175-0bd63700-bbf2-11eb-8311-1a551e35102b.png)
 
 #### Client code:
 
 ```ts
+const patient = new Patient();
+console.warn(patient.visitHospital()); // "hospital visited"
 
+const proxy = new PandemicPatient(patient);
+console.warn(proxy.visitHospital()); // "hands disinfected (access granted), hospital visited"
 ```
 
 ## <a name="singleton">Singleton</a> [creational] [&#8657;](#list)
