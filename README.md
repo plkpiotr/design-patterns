@@ -1,4 +1,4 @@
-# <a name="list">Real-life design patterns with PlantUML diagrams</a>
+# <a name="list">Design patterns with real-life examples and PlantUML diagrams</a>
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
 | :----: | :----: | :----: |
