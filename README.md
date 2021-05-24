@@ -157,7 +157,7 @@ Composite allows you to treat distinct entities like nested objects.
 
 #### UML diagram:
 
-![composite](https://user-images.githubusercontent.com/21959354/119240658-71261b80-bb51-11eb-96fc-3f3f5d4f5ce2.png)
+![composite](https://user-images.githubusercontent.com/21959354/119391394-94c2a080-bcce-11eb-9d0a-d5155493b80b.png)
 
 #### Client code:
 
@@ -185,7 +185,7 @@ Decorator allows you to add a new functionality to existing classes by wrapping 
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/119388786-0f89bc80-bccb-11eb-92a9-9a0ffa87683c.png)
+![decorator](https://user-images.githubusercontent.com/21959354/119391397-955b3700-bcce-11eb-8761-f321b1ee81b2.png)
 
 #### Client code:
 

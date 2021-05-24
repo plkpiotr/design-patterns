@@ -22,8 +22,8 @@ class Department <PRE> {
   + showSalary(): number
 }
 
-Entity <|.. Employee
-Entity <|.. Department
+Entity <|-- Employee
+Entity <|-- Department
 Entity <--o Department
 
 @enduml

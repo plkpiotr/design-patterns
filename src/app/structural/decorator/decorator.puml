@@ -28,7 +28,7 @@ class Jeweller <OR> {
   + wear(): string
 }
 
-Person <|. Woman
+Person <|.. Woman
 Person <|.. Shop
 Person <--o Shop
 
