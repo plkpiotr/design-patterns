@@ -255,4 +255,8 @@ describe('Behavioral patterns', () => {
     expect(cashier.handle('get a haircut')).toEqual('nobody was able to do that');
     expect(securityGuard.handle('sell a ticket')).toEqual('nobody was able to do that');
   });
+
+  it('should test command', () => {
+
+  });
 });
