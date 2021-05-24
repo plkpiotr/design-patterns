@@ -29,8 +29,8 @@ class Jeweller <OR> {
 }
 
 Person <|. Woman
-Person <--o Shop
 Person <|.. Shop
+Person <--o Shop
 
 Shop <|-- ClothingStore
 Shop <|-- Jeweller

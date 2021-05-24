@@ -8,6 +8,7 @@
 | [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Mediator](#mediator) |
 | [Singleton](#singleton) | [Facade](#facade) | [Memento](#memento) |
 | | [Proxy](#proxy) | [Observer](#observer) |
+| | | [Specification](#specification) |
 | | | [State](#state) |
 | | | [Strategy](#strategy) |
 | | | [Template method](#template-method) |
@@ -65,7 +66,7 @@ Bridge allows you to divide complicated class into its abstraction and implement
 
 #### UML diagram:
 
-![bridge](https://user-images.githubusercontent.com/21959354/119240659-71beb200-bb51-11eb-83f9-eae887a7b339.png)
+![bridge](https://user-images.githubusercontent.com/21959354/119388794-10225300-bccb-11eb-9cd4-6f8329f2ef9f.png)
 
 #### Client code:
 
@@ -116,16 +117,24 @@ console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
 
-None
+Chain of responsibility allows you to handle requests based on a defined process.
 
 #### UML diagram:
 
-![chain-of-responsibility](localhost:4200)
+![chain-of-responsibility](https://user-images.githubusercontent.com/21959354/119389839-7360b500-bccc-11eb-8c20-93eee5dd86fd.png)
 
 #### Client code:
 
 ```ts
-
+const cashier = new Cashier();
+const securityGuard = new SecurityGuard();
+const waitress = new Waitress();
+cashier.addNextHandler(securityGuard)
+  .addNextHandler(waitress);
+console.error(cashier.handle('sell a ticket')); // "cashier sold a ticket"
+console.error(cashier.handle('prepare food')); // "waitress prepared food"
+console.error(cashier.handle('get a haircut')); // "nobody was able to do that"
+console.error(securityGuard.handle('sell a ticket')); // "nobody was able to do that"
 ```
 
 ## <a name="command">Command</a> [behavioral] [&#8657;](#list)
@@ -176,7 +185,7 @@ Decorator allows you to add a new functionality to existing classes by wrapping 
 
 #### UML diagram:
 
-![decorator](https://user-images.githubusercontent.com/21959354/119240657-71261b80-bb51-11eb-929f-5663eab0d866.png)
+![decorator](https://user-images.githubusercontent.com/21959354/119388786-0f89bc80-bccb-11eb-92a9-9a0ffa87683c.png)
 
 #### Client code:
 
@@ -347,6 +356,20 @@ const sameKing = King.getInstance();
 console.log(king === sameKing); // true
 console.log(king.showKingName()); // "Louis XX"
 console.log(sameKing.showKingName()); // "Louis XX"
+```
+
+## <a name="state">Specification</a> [behavioral] [&#8657;](#list)
+
+None
+
+#### UML diagram:
+
+![state](localhost:4200)
+
+#### Client code:
+
+```ts
+
 ```
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)

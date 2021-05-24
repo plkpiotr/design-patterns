@@ -27,6 +27,9 @@ import { Cook } from './structural/facade/cook.class';
 import { Waiter } from './structural/facade/waiter.class';
 import { Patient } from './structural/proxy/patient.class';
 import { PandemicPatient } from './structural/proxy/pandemic-patient.class';
+import { Cashier } from './behavioral/chain-of-responsibility/cashier.class';
+import { SecurityGuard } from './behavioral/chain-of-responsibility/security-guard.class';
+import { Waitress } from './behavioral/chain-of-responsibility/waitress.class';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +44,7 @@ export class AppComponent {
     AppComponent.presentAdapter();
     AppComponent.presentBridge();
     AppComponent.presentBuilder();
+    AppComponent.presentChainOfResponsibility();
     AppComponent.presentComposite();
     AppComponent.presentDecorator();
     AppComponent.presentFacade();
@@ -108,6 +112,18 @@ export class AppComponent {
     designer.withEngine('1.6 D-4D');
     const customCar = designer.putCarIntoUse();
     console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
+  }
+
+  private static presentChainOfResponsibility(): void {
+    const cashier = new Cashier();
+    const securityGuard = new SecurityGuard();
+    const waitress = new Waitress();
+    cashier.addNextHandler(securityGuard)
+      .addNextHandler(waitress);
+    console.error(cashier.handle('sell a ticket')); // "cashier sold a ticket"
+    console.error(cashier.handle('prepare food')); // "waitress prepared food"
+    console.error(cashier.handle('get a haircut')); // "nobody was able to do that"
+    console.error(securityGuard.handle('sell a ticket')); // "nobody was able to do that"
   }
 
   private static presentComposite(): void {

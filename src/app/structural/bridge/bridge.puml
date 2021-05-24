@@ -30,7 +30,7 @@ class Decoder <PRE> {
 
 EmbeddedControl <|-- RemoteControl
 
-EmbeddedControl o-> Device
+Device <-o EmbeddedControl
 
 Device <|.. FlatScreen
 Device <|.. Decoder

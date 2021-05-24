@@ -28,6 +28,9 @@ import { PandemicPatient } from './structural/proxy/pandemic-patient.class';
 import { Team } from './behavioral/strategy/team.class';
 import { DefensiveStrategy } from './behavioral/strategy/defensive-strategy.class';
 import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.class';
+import { Cashier } from './behavioral/chain-of-responsibility/cashier.class';
+import { SecurityGuard } from './behavioral/chain-of-responsibility/security-guard.class';
+import { Waitress } from './behavioral/chain-of-responsibility/waitress.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -239,5 +242,17 @@ describe('Behavioral patterns', () => {
     team.setStrategy(new OffensiveStrategy());
     const offensiveLineup = team.prepareLineup();
     expect(offensiveLineup).toEqual(['Kimmich', 'Lewandowski']);
+  });
+
+  it('should test chain of responsibility', () => {
+    const cashier = new Cashier();
+    const securityGuard = new SecurityGuard();
+    const waitress = new Waitress();
+    cashier.addNextHandler(securityGuard)
+      .addNextHandler(waitress);
+    expect(cashier.handle('sell a ticket')).toEqual('cashier sold a ticket');
+    expect(cashier.handle('prepare food')).toEqual('waitress prepared food');
+    expect(cashier.handle('get a haircut')).toEqual('nobody was able to do that');
+    expect(securityGuard.handle('sell a ticket')).toEqual('nobody was able to do that');
   });
 });

@@ -6,4 +6,34 @@ skinparam class {
   borderColor firebrick
 }
 
+interface Handler {
+  addNextHandler(handler: Handler): Handler
+  handle(request: string): string
+}
+
+abstract class StadiumHandler {
+  - nextHandler: Handler
+  + addNextHandler(handler: Handler): Handler
+  + handle(request: string): string
+}
+
+class Cashier <OR> {
+  + handle(request: string): string
+}
+
+class SecurityGuard <OR> {
+  + handle(request: string): string
+}
+
+class Waitress <OR> {
+  + handle(request: string): string
+}
+
+Handler <|.. StadiumHandler
+Handler <--o StadiumHandler
+
+StadiumHandler <|-- Cashier
+StadiumHandler <|-- SecurityGuard
+StadiumHandler <|-- Waitress
+
 @enduml
