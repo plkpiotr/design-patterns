@@ -133,9 +133,11 @@ export class AppComponent {
 
   private static presentCommand(): void {
     const customer = new Customer();
-    customer.setFirstCommand(new CashMachine(1000));
+    const cashMachine = new CashMachine(1000);
+    customer.setFirstCommand(cashMachine);
     const bankEmployee = new BankEmployee();
-    customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+    const bank = new Bank(bankEmployee, 'mortgage');
+    customer.setSecondCommand(bank);
     const commandsStepByStep = customer.executeCommandsStepByStep();
     console.error(commandsStepByStep); // "cash out (1000), sign a contract (mortgage)"
   }
@@ -222,11 +224,13 @@ export class AppComponent {
   }
 
   private static presentStrategy(): void {
-    const team = new Team(new DefensiveStrategy());
+    const defensiveStrategy = new DefensiveStrategy();
+    const team = new Team(defensiveStrategy);
     const defensiveLineup = team.prepareLineup();
     console.error(defensiveLineup); // ["Pavard", "Lewandowski"]
 
-    team.setStrategy(new OffensiveStrategy());
+    const offensiveStrategy = new OffensiveStrategy();
+    team.setStrategy(offensiveStrategy);
     const offensiveLineup = team.prepareLineup();
     console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
   }

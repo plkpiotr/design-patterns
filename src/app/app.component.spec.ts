@@ -239,11 +239,13 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test strategy', () => {
-    const team = new Team(new DefensiveStrategy());
+    const defensiveStrategy = new DefensiveStrategy();
+    const team = new Team(defensiveStrategy);
     const defensiveLineup = team.prepareLineup();
     expect(defensiveLineup).toEqual(['Pavard', 'Lewandowski']);
 
-    team.setStrategy(new OffensiveStrategy());
+    const offensiveStrategy = new OffensiveStrategy();
+    team.setStrategy(offensiveStrategy);
     const offensiveLineup = team.prepareLineup();
     expect(offensiveLineup).toEqual(['Kimmich', 'Lewandowski']);
   });
@@ -262,9 +264,11 @@ describe('Behavioral patterns', () => {
 
   it('should test command', () => {
     const customer = new Customer();
-    customer.setFirstCommand(new CashMachine(1000));
+    const cashMachine = new CashMachine(1000);
+    customer.setFirstCommand(cashMachine);
     const bankEmployee = new BankEmployee();
-    customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+    const bank = new Bank(bankEmployee, 'mortgage');
+    customer.setSecondCommand(bank);
     const commandsStepByStep = customer.executeCommandsStepByStep();
     expect(commandsStepByStep).toEqual('cash out (1000), sign a contract (mortgage)');
   });

@@ -117,7 +117,7 @@ console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
 
-Chain of responsibility allows you to intercept requests based on a defined process.
+Chain of responsibility allows you to handle a request based on a defined process.
 
 #### UML diagram:
 
@@ -139,7 +139,7 @@ console.error(securityGuard.handle('sell a ticket')); // "nobody was able to do 
 
 ## <a name="command">Command</a> [behavioral] [&#8657;](#list)
 
-Command allows you to parameterize objects using actions and execute them in a specific order.
+Command allows you to parameterize objects using requests and execute them in a specific order.
 
 #### UML diagram:
 
@@ -149,9 +149,11 @@ Command allows you to parameterize objects using actions and execute them in a s
 
 ```ts
 const customer = new Customer();
-customer.setFirstCommand(new CashMachine(1000));
+const cashMachine = new CashMachine(1000);
+customer.setFirstCommand(cashMachine);
 const bankEmployee = new BankEmployee();
-customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+const bank = new Bank(bankEmployee, 'mortgage');
+customer.setSecondCommand(bank);
 const commandsStepByStep = customer.executeCommandsStepByStep();
 console.error(commandsStepByStep); // "cash out (1000), sign a contract (mortgage)"
 ```
@@ -402,11 +404,13 @@ Strategy allows you to define a family of algorithms (for a given context) encap
 #### Client code:
 
 ```ts
-const team = new Team(new DefensiveStrategy());
+const defensiveStrategy = new DefensiveStrategy();
+const team = new Team(defensiveStrategy);
 const defensiveLineup = team.prepareLineup();
 console.error(defensiveLineup); // ["Pavard", "Lewandowski"]
 
-team.setStrategy(new OffensiveStrategy());
+const offensiveStrategy = new OffensiveStrategy();
+team.setStrategy(offensiveStrategy);
 const offensiveLineup = team.prepareLineup();
 console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
 ```
