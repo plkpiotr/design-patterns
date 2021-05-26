@@ -117,7 +117,7 @@ console.log(customCar); // Car {price: 63000, engine: "1.6 D-4D"}
 
 ## <a name="chain-of-responsibility">Chain of responsibility</a> [behavioral] [&#8657;](#list)
 
-Chain of responsibility allows you to handle requests based on a defined process.
+Chain of responsibility allows you to intercept requests based on a defined process.
 
 #### UML diagram:
 
@@ -139,16 +139,21 @@ console.error(securityGuard.handle('sell a ticket')); // "nobody was able to do 
 
 ## <a name="command">Command</a> [behavioral] [&#8657;](#list)
 
-None
+Command allows you to parameterize objects using actions and execute them in a specific order.
 
 #### UML diagram:
 
-![command](localhost:4200)
+![command](https://user-images.githubusercontent.com/21959354/119740083-8e295a00-be83-11eb-9a9e-a461d0479028.png)
 
 #### Client code:
 
 ```ts
-
+const customer = new Customer();
+customer.setFirstCommand(new CashMachine(1000));
+const bankEmployee = new BankEmployee();
+customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+const commandsStepByStep = customer.executeCommandsStepByStep();
+console.error(commandsStepByStep); // "cash out (1000), sign a contract (mortgage)"
 ```
 
 ## <a name="composite">Composite</a> [behavioral] [&#8657;](#list)

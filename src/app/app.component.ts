@@ -30,6 +30,10 @@ import { PandemicPatient } from './structural/proxy/pandemic-patient.class';
 import { Cashier } from './behavioral/chain-of-responsibility/cashier.class';
 import { SecurityGuard } from './behavioral/chain-of-responsibility/security-guard.class';
 import { Waitress } from './behavioral/chain-of-responsibility/waitress.class';
+import { BankEmployee } from './behavioral/command/bank-employee.class';
+import { Bank } from './behavioral/command/bank.class';
+import { CashMachine } from './behavioral/command/cash-machine.class';
+import { Customer } from './behavioral/command/customer.class';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +49,7 @@ export class AppComponent {
     AppComponent.presentBridge();
     AppComponent.presentBuilder();
     AppComponent.presentChainOfResponsibility();
+    AppComponent.presentCommand();
     AppComponent.presentComposite();
     AppComponent.presentDecorator();
     AppComponent.presentFacade();
@@ -124,6 +129,15 @@ export class AppComponent {
     console.error(cashier.handle('prepare food')); // "waitress prepared food"
     console.error(cashier.handle('get a haircut')); // "nobody was able to do that"
     console.error(securityGuard.handle('sell a ticket')); // "nobody was able to do that"
+  }
+
+  private static presentCommand(): void {
+    const customer = new Customer();
+    customer.setFirstCommand(new CashMachine(1000));
+    const bankEmployee = new BankEmployee();
+    customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+    const commandsStepByStep = customer.executeCommandsStepByStep();
+    console.error(commandsStepByStep); // "cash out (1000), sign a contract (mortgage)"
   }
 
   private static presentComposite(): void {

@@ -6,4 +6,40 @@ skinparam class {
   borderColor firebrick
 }
 
+interface Command {
+  execute(): string
+}
+
+class Customer <PRE> {
+  - firstCommand: Command;
+  - secondCommand: Command;
+  + setFirstCommand(firstCommand: Command): void
+  + setSecondCommand(secondCommand: Command): void
+  + executeCommandsStepByStep(): string
+}
+
+class CashMachine <XOR> {
+  - cash: number
+  constructor(cash: number)
+  + execute(): string
+}
+
+class Bank <XOR> {
+  - bankEmployee: BankEmployee
+  - contract: string
+  constructor(bankEmployee: BankEmployee, contract: string)
+  + execute(): string
+}
+
+class BankEmployee <OPT> {
+  + signContract(contract: string): string
+}
+
+Command <-o Customer
+
+Command <|.. CashMachine
+Command <|.. Bank
+
+Bank --> BankEmployee
+
 @enduml

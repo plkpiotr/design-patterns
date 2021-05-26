@@ -31,6 +31,10 @@ import { OffensiveStrategy } from './behavioral/strategy/offensive-strategy.clas
 import { Cashier } from './behavioral/chain-of-responsibility/cashier.class';
 import { SecurityGuard } from './behavioral/chain-of-responsibility/security-guard.class';
 import { Waitress } from './behavioral/chain-of-responsibility/waitress.class';
+import { Customer } from './behavioral/command/customer.class';
+import { CashMachine } from './behavioral/command/cash-machine.class';
+import { BankEmployee } from './behavioral/command/bank-employee.class';
+import { Bank } from './behavioral/command/bank.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -257,6 +261,11 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test command', () => {
-
+    const customer = new Customer();
+    customer.setFirstCommand(new CashMachine(1000));
+    const bankEmployee = new BankEmployee();
+    customer.setSecondCommand(new Bank(bankEmployee, 'mortgage'));
+    const commandsStepByStep = customer.executeCommandsStepByStep();
+    expect(commandsStepByStep).toEqual('cash out (1000), sign a contract (mortgage)');
   });
 });
