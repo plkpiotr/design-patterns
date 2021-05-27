@@ -4,12 +4,10 @@
 | :----: | :----: | :----: |
 | [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) |
 | [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) |
-| [Factory method](#factory-method) | [Composite](#composite) | [Iterator](#iterator) |
-| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Mediator](#mediator) |
-| [Singleton](#singleton) | [Facade](#facade) | [Memento](#memento) |
-| | [Proxy](#proxy) | [Observer](#observer) |
-| | | [Specification](#specification) |
-| | | [State](#state) |
+| [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) |
+| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) |
+| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) |
+| | [Proxy](#proxy) | [State](#state) |
 | | | [Strategy](#strategy) |
 | | | [Template method](#template-method) |
 | | | [Visitor](#visitor) |
@@ -272,20 +270,6 @@ console.log(album); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire
 console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"] }
 ```
 
-## <a name="iterator">Iterator</a> [behavioral] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![iterator](localhost:4200)
-
-#### Client code:
-
-```ts
-
-```
-
 ## <a name="mediator">Mediator</a> [behavioral] [&#8657;](#list)
 
 None
@@ -293,20 +277,6 @@ None
 #### UML diagram:
 
 ![mediator](localhost:4200)
-
-#### Client code:
-
-```ts
-
-```
-
-## <a name="memento">Memento</a> [behavioral] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![memento](localhost:4200)
 
 #### Client code:
 
