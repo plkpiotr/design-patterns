@@ -304,7 +304,7 @@ Proxy allows you to add a new functionality to an existing class and control acc
 
 #### UML diagram:
 
-![proxy](https://user-images.githubusercontent.com/21959354/119268175-0bd63700-bbf2-11eb-8311-1a551e35102b.png)
+![proxy](https://user-images.githubusercontent.com/21959354/120033575-07e45380-bffc-11eb-97bd-0900b707f866.png)
 
 #### Client code:
 

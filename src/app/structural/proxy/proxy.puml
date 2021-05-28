@@ -24,6 +24,6 @@ class PandemicPatient <PRE> {
 Hospital <|.. Patient
 Hospital <|.. PandemicPatient
 
-Patient <-o PandemicPatient
+Patient <- PandemicPatient
 
 @enduml
