@@ -35,6 +35,9 @@ import { Customer } from './behavioral/command/customer.class';
 import { CashMachine } from './behavioral/command/cash-machine.class';
 import { BankEmployee } from './behavioral/command/bank-employee.class';
 import { Bank } from './behavioral/command/bank.class';
+import { Ambulance } from './behavioral/mediator/ambulance.class';
+import { Helicopter } from './behavioral/mediator/helicopter.class';
+import { Dispatch } from './behavioral/mediator/dispatch.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -238,18 +241,6 @@ describe('Behavioral patterns', () => {
     }).compileComponents();
   });
 
-  it('should test strategy', () => {
-    const defensiveStrategy = new DefensiveStrategy();
-    const team = new Team(defensiveStrategy);
-    const defensiveLineup = team.prepareLineup();
-    expect(defensiveLineup).toEqual(['Pavard', 'Lewandowski']);
-
-    const offensiveStrategy = new OffensiveStrategy();
-    team.setStrategy(offensiveStrategy);
-    const offensiveLineup = team.prepareLineup();
-    expect(offensiveLineup).toEqual(['Kimmich', 'Lewandowski']);
-  });
-
   it('should test chain of responsibility', () => {
     const cashier = new Cashier();
     const securityGuard = new SecurityGuard();
@@ -271,5 +262,30 @@ describe('Behavioral patterns', () => {
     customer.setSecondCommand(bank);
     const commandsStepByStep = customer.executeCommandsStepByStep();
     expect(commandsStepByStep).toEqual('cash out (1000), sign a contract (mortgage)');
+  });
+
+  it('should test mediator', () => {
+    const ambulance = new Ambulance();
+    expect(ambulance.notifyUnderControl()).toEqual('ambulance is not assign to any dispatch');
+
+    const helicopter = new Helicopter();
+    const dispatch = new Dispatch(ambulance, helicopter);
+    expect(ambulance.notifyUnderControl()).toEqual('helicopter is not needed');
+    expect(helicopter.notifyForBackup()).toEqual('ambulance arrives, helicopter is busy');
+
+    const substituteAmbulance = new Ambulance(dispatch);
+    expect(substituteAmbulance.notifyUnderControl()).toEqual('helicopter is not needed');
+  });
+
+  it('should test strategy', () => {
+    const defensiveStrategy = new DefensiveStrategy();
+    const team = new Team(defensiveStrategy);
+    const defensiveLineup = team.prepareLineup();
+    expect(defensiveLineup).toEqual(['Pavard', 'Lewandowski']);
+
+    const offensiveStrategy = new OffensiveStrategy();
+    team.setStrategy(offensiveStrategy);
+    const offensiveLineup = team.prepareLineup();
+    expect(offensiveLineup).toEqual(['Kimmich', 'Lewandowski']);
   });
 });

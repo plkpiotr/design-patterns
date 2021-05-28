@@ -272,16 +272,25 @@ console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "O
 
 ## <a name="mediator">Mediator</a> [behavioral] [&#8657;](#list)
 
-None
+Mediator allows you to define at least one class responsible for communication between components.
 
 #### UML diagram:
 
-![mediator](localhost:4200)
+![mediator](https://user-images.githubusercontent.com/21959354/120051271-41c75100-c020-11eb-81a7-5df0a2d6012c.png)
 
 #### Client code:
 
 ```ts
+const ambulance = new Ambulance();
+console.error(ambulance.notifyUnderControl()); // "ambulance is not assign to any dispatch"
 
+const helicopter = new Helicopter();
+const dispatch = new Dispatch(ambulance, helicopter);
+console.error(ambulance.notifyUnderControl()); // "helicopter is not needed"
+console.error(helicopter.notifyForBackup()); // "ambulance arrives, helicopter is busy"
+
+const substituteAmbulance = new Ambulance(dispatch);
+console.error(substituteAmbulance.notifyUnderControl()); // "helicopter is not needed"
 ```
 
 ## <a name="observer">Observer</a> [behavioral] [&#8657;](#list)

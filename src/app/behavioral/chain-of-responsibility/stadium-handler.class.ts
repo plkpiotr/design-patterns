@@ -9,9 +9,6 @@ export abstract class StadiumHandler implements Handler {
   }
 
   public handle(request: string): string {
-    if (this.nextHandler !== undefined) {
-      return this.nextHandler.handle(request);
-    }
-    return 'nobody was able to do that';
+    return this.nextHandler !== undefined ? this.nextHandler.handle(request) : 'nobody was able to do that';
   }
 }

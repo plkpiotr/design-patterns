@@ -34,6 +34,9 @@ import { BankEmployee } from './behavioral/command/bank-employee.class';
 import { Bank } from './behavioral/command/bank.class';
 import { CashMachine } from './behavioral/command/cash-machine.class';
 import { Customer } from './behavioral/command/customer.class';
+import { Helicopter } from './behavioral/mediator/helicopter.class';
+import { Ambulance } from './behavioral/mediator/ambulance.class';
+import { Dispatch } from './behavioral/mediator/dispatch.class';
 
 @Component({
   selector: 'app-root',
@@ -55,6 +58,7 @@ export class AppComponent {
     AppComponent.presentFacade();
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
+    AppComponent.presentMediator();
     AppComponent.presentProxy();
     AppComponent.presentSingleton();
     AppComponent.presentStrategy();
@@ -204,6 +208,19 @@ export class AppComponent {
 
     console.log(album); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire"] }
     console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "On Fire", "So Bad"] }
+  }
+
+  private static presentMediator(): void {
+    const ambulance = new Ambulance();
+    console.error(ambulance.notifyUnderControl()); // "ambulance is not assign to any dispatch"
+
+    const helicopter = new Helicopter();
+    const dispatch = new Dispatch(ambulance, helicopter);
+    console.error(ambulance.notifyUnderControl()); // "helicopter is not needed"
+    console.error(helicopter.notifyForBackup()); // "ambulance arrives, helicopter is busy"
+
+    const substituteAmbulance = new Ambulance(dispatch);
+    console.error(substituteAmbulance.notifyUnderControl()); // "helicopter is not needed"
   }
 
   private static presentProxy(): void {

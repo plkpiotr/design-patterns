@@ -6,4 +6,41 @@ skinparam class {
   borderColor firebrick
 }
 
+interface Mediator {
+  notify(notification: string): string
+}
+
+class Dispatch <PRE> {
+  - ambulance: Ambulance
+  - helicopter: Helicopter
+  constructor(ambulance: Ambulance, helicopter: Helicopter)
+  + notify(notification: string): string
+}
+
+class Vehicle {
+  # mediator: Mediator
+  constructor(protected mediator?: Mediator)
+  + setMediator(mediator: Mediator): void
+}
+
+class Ambulance <PRE> {
+  + notifyUnderControl(): string
+  + arrive(): string
+}
+
+class Helicopter <PRE> {
+  + notifyForBackup(): string
+  + markAsBusy(): string
+  + markAsNotNeeded(): string
+}
+
+Mediator <--o Vehicle
+Mediator <|.. Dispatch
+
+Vehicle <|-- Ambulance
+Vehicle <|-- Helicopter
+
+Dispatch --> Ambulance
+Dispatch --> Helicopter
+
 @enduml
