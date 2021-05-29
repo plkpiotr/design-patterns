@@ -6,4 +6,41 @@ skinparam class {
   borderColor firebrick
 }
 
+class HydrogenOxide <PRE> {
+  - state: State
+  constructor(state: State)
+  + cool(): string
+  + warm(): string
+  + changeState(state: State): void
+  + showName(): string
+}
+
+abstract class State {
+  # hydrogenOxide: HydrogenOxide
+  + {abstract} lowerTemperature(): string
+  + {abstract} raiseTemperature(): string
+  + setHydrogenOxide(hydrogenOxide: HydrogenOxide): void
+  + showChemicalFormula(): string
+}
+
+package states.class.ts {
+  class LiquidState
+  class SolidState
+}
+
+class LiquidState <XOR> {
+  + lowerTemperature(): string
+  + raiseTemperature(): string
+}
+
+class SolidState <XOR> {
+  + lowerTemperature(): string
+  + raiseTemperature(): string
+}
+
+HydrogenOxide o-> State
+
+State <|-- LiquidState
+State <|-- SolidState
+
 @enduml

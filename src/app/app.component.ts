@@ -40,6 +40,8 @@ import { Dispatch } from './behavioral/mediator/dispatch.class';
 import { Book } from './behavioral/observer/book.class';
 import { Novice } from './behavioral/observer/novice.class';
 import { Collector } from './behavioral/observer/collector.class';
+import { LiquidState, SolidState } from './behavioral/state/states.class';
+import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
 
 @Component({
   selector: 'app-root',
@@ -266,7 +268,17 @@ export class AppComponent {
   }
 
   private static presentState(): void {
+    const liquidState = new LiquidState();
+    const hydrogenOxide = new HydrogenOxide(liquidState);
+    console.error(hydrogenOxide.warm()); // "still water"
+    console.error(hydrogenOxide.cool()); // "ice"
+    console.error(hydrogenOxide.showName()); // "H2O"
 
+    const solidState = new SolidState();
+    hydrogenOxide.changeState(solidState);
+    console.error(hydrogenOxide.warm()); // "water"
+    console.error(hydrogenOxide.cool()); // "ice"
+    console.error(hydrogenOxide.showName()); // "H2O"
   }
 
   private static presentStrategy(): void {

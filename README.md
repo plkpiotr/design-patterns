@@ -1,4 +1,4 @@
-# <a name="list">20 design patterns in TypeScript with PlantUML diagrams</a>
+# <a name="list">Design patterns in TypeScript with PlantUML diagrams</a>
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
 | :----: | :----: | :----: |
@@ -162,7 +162,7 @@ Composite allows you to treat distinct entities like nested objects.
 
 #### UML diagram:
 
-![composite](https://user-images.githubusercontent.com/21959354/120074697-58ac8880-c09e-11eb-842b-5ce76fbb0558.png)
+![composite](https://user-images.githubusercontent.com/21959354/120085875-12761a00-c0dc-11eb-9f2a-a2b46a977b95.png)
 
 #### Client code:
 
@@ -355,16 +355,26 @@ console.log(sameKing.showKingName()); // "Louis XX"
 
 ## <a name="state">Specification</a> [behavioral] [&#8657;](#list)
 
-None
+State allows you to change object behavior when its internal state changes.
 
 #### UML diagram:
 
-![state](localhost:4200)
+![state](https://user-images.githubusercontent.com/21959354/120085981-03439c00-c0dd-11eb-9a1c-fac06d5d8837.png)
 
 #### Client code:
 
 ```ts
+const liquidState = new LiquidState();
+const hydrogenOxide = new HydrogenOxide(liquidState);
+console.error(hydrogenOxide.warm()); // "still water"
+console.error(hydrogenOxide.cool()); // "ice"
+console.error(hydrogenOxide.showName()); // "H2O"
 
+const solidState = new SolidState();
+hydrogenOxide.changeState(solidState);
+console.error(hydrogenOxide.warm()); // "water"
+console.error(hydrogenOxide.cool()); // "ice"
+console.error(hydrogenOxide.showName()); // "H2O"
 ```
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)
@@ -387,7 +397,7 @@ Strategy allows you to define a family of algorithms encapsulating them in the f
 
 #### UML diagram:
 
-![strategy](https://user-images.githubusercontent.com/21959354/119240660-71beb200-bb51-11eb-8a61-dcd7bb60bb7c.png)
+![strategy](https://user-images.githubusercontent.com/21959354/120085683-77307500-c0da-11eb-8bba-aa0d3ee4381e.png)
 
 #### Client code:
 

@@ -41,6 +41,8 @@ import { Dispatch } from './behavioral/mediator/dispatch.class';
 import { Book } from './behavioral/observer/book.class';
 import { Novice } from './behavioral/observer/novice.class';
 import { Collector } from './behavioral/observer/collector.class';
+import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
+import { LiquidState, SolidState } from './behavioral/state/states.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -298,7 +300,17 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test state', () => {
+    const liquidState = new LiquidState();
+    const hydrogenOxide = new HydrogenOxide(liquidState);
+    expect(hydrogenOxide.warm()).toEqual('still water');
+    expect(hydrogenOxide.cool()).toEqual('ice');
+    expect(hydrogenOxide.showName()).toEqual('H2O');
 
+    const solidState = new SolidState();
+    hydrogenOxide.changeState(solidState);
+    expect(hydrogenOxide.warm()).toEqual('water');
+    expect(hydrogenOxide.cool()).toEqual('ice');
+    expect(hydrogenOxide.showName()).toEqual('H2O');
   });
 
   it('should test strategy', () => {
