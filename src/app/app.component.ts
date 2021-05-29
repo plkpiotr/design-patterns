@@ -37,6 +37,9 @@ import { Customer } from './behavioral/command/customer.class';
 import { Helicopter } from './behavioral/mediator/helicopter.class';
 import { Ambulance } from './behavioral/mediator/ambulance.class';
 import { Dispatch } from './behavioral/mediator/dispatch.class';
+import { Book } from './behavioral/observer/book.class';
+import { Novice } from './behavioral/observer/novice.class';
+import { Collector } from './behavioral/observer/collector.class';
 
 @Component({
   selector: 'app-root',
@@ -229,7 +232,16 @@ export class AppComponent {
   }
 
   private static presentObserver(): void {
+    const book = new Book();
+    const collector = new Collector();
+    console.error(book.follow(collector)); // "follower started following book"
 
+    const novice = new Novice();
+    console.error(book.follow(novice)); // "follower started following book"
+    console.error(book.changePrice(69)); // "collector is interested"
+    console.error(book.changePrice(49)); // "collector is interested, novice is interested"
+    console.error(book.unfollow(novice)); // "follower stopped following book"
+    console.error(book.changePrice(39)); // "collector is interested"
   }
 
   private static presentProxy(): void {

@@ -6,4 +6,33 @@ skinparam class {
   borderColor firebrick
 }
 
+class Book <PRE> {
+  + price: number
+  - followers: Follower[] = []
+  + follow(follower: Follower): string
+  + unfollow(follower: Follower): string
+  + changePrice(price: number): string
+  - notifyFollowers(): string
+}
+
+interface Follower {
+  receiveNotificationIfNeeded(book: Book): string
+}
+
+class Collector <OR> {
+  + receiveNotificationIfNeeded(book: Book): string
+}
+
+class Novice <OR> {
+  + receiveNotificationIfNeeded(book: Book): string
+}
+
+Book o-> Follower
+
+Follower <|.. Collector
+Follower <|.. Novice
+
+Book <-- Collector
+Book <-- Novice
+
 @enduml

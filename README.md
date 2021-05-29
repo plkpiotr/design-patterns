@@ -162,7 +162,7 @@ Composite allows you to treat distinct entities like nested objects.
 
 #### UML diagram:
 
-![composite](https://user-images.githubusercontent.com/21959354/119391394-94c2a080-bcce-11eb-9d0a-d5155493b80b.png)
+![composite](https://user-images.githubusercontent.com/21959354/120074697-58ac8880-c09e-11eb-842b-5ce76fbb0558.png)
 
 #### Client code:
 
@@ -254,7 +254,7 @@ Fluent interface allows you to create and edit objects using method chaining.
 
 #### UML diagram:
 
-![fluent-interface](https://user-images.githubusercontent.com/21959354/117581265-3ad1b080-b0fc-11eb-9b88-453de1791c33.png)
+![fluent-interface](https://user-images.githubusercontent.com/21959354/120074699-59ddb580-c09e-11eb-806a-32ed5304c9c0.png)
 
 #### Client code:
 
@@ -295,16 +295,25 @@ console.error(substituteAmbulance.notifyUnderControl()); // "helicopter is not n
 
 ## <a name="observer">Observer</a> [behavioral] [&#8657;](#list)
 
-None
+Observer allows you to define a class responsible for subscription mechanism.
 
 #### UML diagram:
 
-![observer](localhost:4200)
+![observer](https://user-images.githubusercontent.com/21959354/120075203-9a3e3300-c0a0-11eb-9902-56bd6cc07e19.png)
 
 #### Client code:
 
 ```ts
+const book = new Book();
+const collector = new Collector();
+console.error(book.follow(collector)); // "follower started following book"
 
+const novice = new Novice();
+console.error(book.follow(novice)); // "follower started following book"
+console.error(book.changePrice(69)); // "collector is interested"
+console.error(book.changePrice(49)); // "collector is interested, novice is interested"
+console.error(book.unfollow(novice)); // "follower stopped following book"
+console.error(book.changePrice(39)); // "collector is interested"
 ```
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)

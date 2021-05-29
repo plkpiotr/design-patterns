@@ -38,6 +38,9 @@ import { Bank } from './behavioral/command/bank.class';
 import { Ambulance } from './behavioral/mediator/ambulance.class';
 import { Helicopter } from './behavioral/mediator/helicopter.class';
 import { Dispatch } from './behavioral/mediator/dispatch.class';
+import { Book } from './behavioral/observer/book.class';
+import { Novice } from './behavioral/observer/novice.class';
+import { Collector } from './behavioral/observer/collector.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -278,7 +281,16 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test observer', () => {
+    const book = new Book();
+    const collector = new Collector();
+    expect(book.follow(collector)).toEqual('follower started following book');
 
+    const novice = new Novice();
+    expect(book.follow(novice)).toEqual('follower started following book');
+    expect(book.changePrice(69)).toEqual('collector is interested');
+    expect(book.changePrice(49)).toEqual('collector is interested, novice is interested');
+    expect(book.unfollow(novice)).toEqual('follower stopped following book');
+    expect(book.changePrice(39)).toEqual('collector is interested');
   });
 
   it('should test specification', () => {
