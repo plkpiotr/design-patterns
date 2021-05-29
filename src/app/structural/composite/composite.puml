@@ -8,7 +8,7 @@ skinparam class {
 
 abstract class Entity {
   - entity: Entity
-  {abstract} showSalary(): number
+  + {abstract} showSalary(): number
   + setEntity(entity: Entity): void
 }
 
