@@ -21,7 +21,7 @@ class Label <PRE> {
 
 class Album {
   - name: string
-  - tracks: string[]
+  - tracks: string[] = []
   constructor(album?: Album)
   + setName(name: string): void
   + setTracks(tracks: string[]): void

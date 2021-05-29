@@ -1,6 +1,6 @@
 export class Album {
   private name: string;
-  private tracks: string[];
+  private tracks: string[] = [];
 
   constructor(album?: Album) {
     this.name = album?.name;

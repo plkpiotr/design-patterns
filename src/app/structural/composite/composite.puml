@@ -17,7 +17,7 @@ class Employee <PRE> {
 }
 
 class Department <PRE> {
-  - entities: Entity[]
+  - entities: Entity[] = []
   + addEntity(entity: Entity): void
   + showSalary(): number
 }
