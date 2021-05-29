@@ -1,4 +1,4 @@
-# <a name="list">Design patterns in TypeScript with PlantUML diagrams</a>
+# <a name="list">20 Design patterns in TypeScript with PlantUML diagrams</a>
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
 | :----: | :----: | :----: |
@@ -60,7 +60,7 @@ console.warn(adaptedRemake.displayVGA()); // [640, 360]
 
 ## <a name="bridge">Bridge</a> [structural] [&#8657;](#list)
 
-Bridge allows you to divide complicated class into its abstraction and implementation (to prevent creation of multiple redundant classes).
+Bridge allows you to divide complicated class into its abstraction and implementation.
 
 #### UML diagram:
 
@@ -383,7 +383,7 @@ None
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
 
-Strategy allows you to define a family of algorithms (for a given context) encapsulating them in the form of separated classes.
+Strategy allows you to define a family of algorithms encapsulating them in the form of separated classes.
 
 #### UML diagram:
 
