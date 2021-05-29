@@ -287,10 +287,10 @@ describe('Behavioral patterns', () => {
 
     const novice = new Novice();
     expect(book.follow(novice)).toEqual('follower started following book');
-    expect(book.changePrice(69)).toEqual('collector is interested');
-    expect(book.changePrice(49)).toEqual('collector is interested, novice is interested');
+    expect(book.changePrice(69)).toEqual('collector received notification');
+    expect(book.changePrice(49)).toEqual('collector received notification, novice received notification');
     expect(book.unfollow(novice)).toEqual('follower stopped following book');
-    expect(book.changePrice(39)).toEqual('collector is interested');
+    expect(book.changePrice(39)).toEqual('collector received notification');
   });
 
   it('should test specification', () => {

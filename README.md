@@ -1,4 +1,4 @@
-# <a name="list">20 Design patterns in TypeScript with PlantUML diagrams</a>
+# <a name="list">20 design patterns in TypeScript with PlantUML diagrams</a>
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
 | :----: | :----: | :----: |
@@ -310,10 +310,10 @@ console.error(book.follow(collector)); // "follower started following book"
 
 const novice = new Novice();
 console.error(book.follow(novice)); // "follower started following book"
-console.error(book.changePrice(69)); // "collector is interested"
-console.error(book.changePrice(49)); // "collector is interested, novice is interested"
+console.error(book.changePrice(69)); // "collector received notification"
+console.error(book.changePrice(49)); // "collector received notification, novice received notification"
 console.error(book.unfollow(novice)); // "follower stopped following book"
-console.error(book.changePrice(39)); // "collector is interested"
+console.error(book.changePrice(39)); // "collector received notification"
 ```
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)

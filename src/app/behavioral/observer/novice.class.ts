@@ -4,7 +4,7 @@ import { Follower } from './follower.interface';
 export class Novice implements Follower {
   public receiveNotificationIfNeeded(book: Book): string {
     if (book.price < 50) {
-      return ', novice is interested';
+      return ', novice received notification';
     }
   }
 }
