@@ -353,7 +353,21 @@ console.log(king.showKingName()); // "Louis XX"
 console.log(sameKing.showKingName()); // "Louis XX"
 ```
 
-## <a name="state">Specification</a> [behavioral] [&#8657;](#list)
+## <a name="specification">Specification</a> [behavioral] [&#8657;](#list)
+
+None
+
+#### UML diagram:
+
+![specification](localhost:4200)
+
+#### Client code:
+
+```ts
+
+```
+
+## <a name="state">State</a> [behavioral] [&#8657;](#list)
 
 State allows you to change object behavior when its internal state changes.
 
@@ -375,20 +389,6 @@ hydrogenOxide.changeState(solidState);
 console.error(hydrogenOxide.warm()); // "water"
 console.error(hydrogenOxide.cool()); // "ice"
 console.error(hydrogenOxide.showName()); // "H2O"
-```
-
-## <a name="state">State</a> [behavioral] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![state](localhost:4200)
-
-#### Client code:
-
-```ts
-
 ```
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
