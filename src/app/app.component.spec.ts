@@ -277,6 +277,18 @@ describe('Behavioral patterns', () => {
     expect(substituteAmbulance.notifyUnderControl()).toEqual('helicopter is not needed');
   });
 
+  it('should test observer', () => {
+
+  });
+
+  it('should test specification', () => {
+
+  });
+
+  it('should test state', () => {
+
+  });
+
   it('should test strategy', () => {
     const defensiveStrategy = new DefensiveStrategy();
     const team = new Team(defensiveStrategy);
@@ -287,5 +299,13 @@ describe('Behavioral patterns', () => {
     team.setStrategy(offensiveStrategy);
     const offensiveLineup = team.prepareLineup();
     expect(offensiveLineup).toEqual(['Kimmich', 'Lewandowski']);
+  });
+
+  it('should test template method', () => {
+
+  });
+
+  it('should test visitor', () => {
+
   });
 });

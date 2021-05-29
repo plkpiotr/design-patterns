@@ -59,9 +59,14 @@ export class AppComponent {
     AppComponent.presentFactoryMethod();
     AppComponent.presentFluentInterface();
     AppComponent.presentMediator();
+    AppComponent.presentObserver();
     AppComponent.presentProxy();
     AppComponent.presentSingleton();
+    AppComponent.presentSpecification();
+    AppComponent.presentState();
     AppComponent.presentStrategy();
+    AppComponent.presentTemplateMethod();
+    AppComponent.presentVisitor();
   }
 
   private static presentAbstractFactory(): void {
@@ -223,6 +228,10 @@ export class AppComponent {
     console.error(substituteAmbulance.notifyUnderControl()); // "helicopter is not needed"
   }
 
+  private static presentObserver(): void {
+
+  }
+
   private static presentProxy(): void {
     const patient = new Patient();
     console.warn(patient.visitHospital()); // "hospital visited"
@@ -240,6 +249,14 @@ export class AppComponent {
     console.log(sameKing.showKingName()); // "Louis XX"
   }
 
+  private static presentSpecification(): void {
+
+  }
+
+  private static presentState(): void {
+
+  }
+
   private static presentStrategy(): void {
     const defensiveStrategy = new DefensiveStrategy();
     const team = new Team(defensiveStrategy);
@@ -250,5 +267,13 @@ export class AppComponent {
     team.setStrategy(offensiveStrategy);
     const offensiveLineup = team.prepareLineup();
     console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
+  }
+
+  private static presentTemplateMethod(): void {
+
+  }
+
+  private static presentVisitor(): void {
+
   }
 }

@@ -272,7 +272,7 @@ console.log(deluxeAlbum); // Album { name: "Recovery", tracks: ["Not Afraid", "O
 
 ## <a name="mediator">Mediator</a> [behavioral] [&#8657;](#list)
 
-Mediator allows you to define at least one class responsible for communication between components.
+Mediator allows you to define a class responsible for communication between components.
 
 #### UML diagram:
 
