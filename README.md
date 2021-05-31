@@ -427,5 +427,5 @@ const hawaiianPizza = new HawaiianPizza();
 console.error(hawaiianPizza.templateMethod()); // "dough, sauce, cheddar, ham, pineapple"
 
 const mexicanPizza = new MexicanPizza();
-console.error(mexicanPizza.templateMethod()); // "dough, sauce, mozzarella, beef, jalapenos, mild ketchup"
+console.error(mexicanPizza.templateMethod()); // "dough, sauce, mozzarella, beef, jalapenos, hot ketchup"
 ```
