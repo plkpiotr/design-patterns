@@ -6,4 +6,27 @@ skinparam class {
   borderColor firebrick
 }
 
+abstract class Pizza {
+  + templateMethod(): string
+  # {abstract} chooseCheese(): string
+  # {abstract} chooseIngredients(): string
+  # prepareSauce(): string
+  # prepareDough(): string
+  # pourKetchupIfNeeded(): string
+}
+
+class HawaiianPizza <XOR> {
+  # chooseCheese(): string
+  # chooseIngredients(): string
+}
+
+class MexicanPizza <XOR> {
+  # chooseCheese(): string
+  # chooseIngredients(): string
+  # pourKetchupIfNeeded(): string
+}
+
+Pizza <|-- HawaiianPizza
+Pizza <|-- MexicanPizza
+
 @enduml

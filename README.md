@@ -1,16 +1,15 @@
 # <a name="list">Design patterns in TypeScript with PlantUML diagrams</a>
 
-| ⬜ Creational | 🟨 Structural | 🟥 Behavioral |
-| :----: | :----: | :----: |
-| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) |
-| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) |
-| [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) |
-| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) |
-| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) |
-| | [Proxy](#proxy) | [State](#state) |
-| | | [Strategy](#strategy) |
-| | | [Template method](#template-method) |
-| | | [Visitor](#visitor) |
+| ⬜ Creational | 🟨 Structural | 🟥 Behavioral | Assumption: |
+| :---- | :---- | :---- | :---- |
+| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) | |
+| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | |
+| [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | |
+| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | |
+| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | |
+| | [Proxy](#proxy) | [State](#state) | |
+| | | [Strategy](#strategy) | |
+| | | [Template method](#template-method) | |
 
 ---
 
@@ -230,7 +229,7 @@ console.warn(secondWaiter.fillDoubleOrder()); // "dinner x2, coffee x2"
 
 ## <a name="factory-method">Factory method</a> [creational] [&#8657;](#list)
 
-Factory method allows you to create objects using subclasses that can change a type of created object.
+Factory method allows you to create objects using subclasses that can change the type of created object.
 
 #### UML diagram:
 
@@ -318,7 +317,7 @@ console.error(book.changePrice(39)); // "collector received notification"
 
 ## <a name="proxy">Proxy</a> [structural] [&#8657;](#list)
 
-Proxy allows you to add a new functionality to an existing class and control access to it.
+Proxy allows you to add a new functionality to existing class and control access to it.
 
 #### UML diagram:
 
@@ -415,28 +414,18 @@ console.error(offensiveLineup); // ["Kimmich", "Lewandowski"]
 
 ## <a name="template-method">Template method</a> [behavioral] [&#8657;](#list)
 
-None
+Template method allows you to define skeleton of an algorithm and further specify it in subclasses.
 
 #### UML diagram:
 
-![template-method](localhost:4200)
+![template-method](https://user-images.githubusercontent.com/21959354/120238801-3e6cd900-c25d-11eb-96f7-eb468e35e868.png)
 
 #### Client code:
 
 ```ts
+const hawaiianPizza = new HawaiianPizza();
+console.error(hawaiianPizza.templateMethod()); // "dough, sauce, cheddar, ham, pineapple"
 
-```
-
-## <a name="visitor">Visitor</a> [behavioral] [&#8657;](#list)
-
-None
-
-#### UML diagram:
-
-![visitor](localhost:4200)
-
-#### Client code:
-
-```ts
-
+const mexicanPizza = new MexicanPizza();
+console.error(mexicanPizza.templateMethod()); // "dough, sauce, mozzarella, beef, jalapenos, mild ketchup"
 ```

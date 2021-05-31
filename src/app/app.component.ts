@@ -42,6 +42,8 @@ import { Novice } from './behavioral/observer/novice.class';
 import { Collector } from './behavioral/observer/collector.class';
 import { LiquidState, SolidState } from './behavioral/state/states.class';
 import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
+import { MexicanPizza } from './behavioral/template-method/mexican-pizza.class';
+import { HawaiianPizza } from './behavioral/template-method/hawaiian-pizza.class';
 
 @Component({
   selector: 'app-root',
@@ -71,7 +73,6 @@ export class AppComponent {
     AppComponent.presentState();
     AppComponent.presentStrategy();
     AppComponent.presentTemplateMethod();
-    AppComponent.presentVisitor();
   }
 
   private static presentAbstractFactory(): void {
@@ -294,10 +295,10 @@ export class AppComponent {
   }
 
   private static presentTemplateMethod(): void {
+    const hawaiianPizza = new HawaiianPizza();
+    console.error(hawaiianPizza.templateMethod()); // "dough, sauce, cheddar, ham, pineapple"
 
-  }
-
-  private static presentVisitor(): void {
-
+    const mexicanPizza = new MexicanPizza();
+    console.error(mexicanPizza.templateMethod()); // "dough, sauce, mozzarella, beef, jalapenos, hot ketchup"
   }
 }

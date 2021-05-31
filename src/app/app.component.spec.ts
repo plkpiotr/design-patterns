@@ -43,6 +43,8 @@ import { Novice } from './behavioral/observer/novice.class';
 import { Collector } from './behavioral/observer/collector.class';
 import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
 import { LiquidState, SolidState } from './behavioral/state/states.class';
+import { HawaiianPizza } from './behavioral/template-method/hawaiian-pizza.class';
+import { MexicanPizza } from './behavioral/template-method/mexican-pizza.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -326,10 +328,10 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test template method', () => {
+    const hawaiianPizza = new HawaiianPizza();
+    expect(hawaiianPizza.templateMethod()).toEqual('dough, sauce, cheddar, ham, pineapple');
 
-  });
-
-  it('should test visitor', () => {
-
+    const mexicanPizza = new MexicanPizza();
+    expect(mexicanPizza.templateMethod()).toEqual('dough, sauce, mozzarella, beef, jalapenos, hot ketchup');
   });
 });
