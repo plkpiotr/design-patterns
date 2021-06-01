@@ -2,10 +2,10 @@
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral | Assumption: |
 | :---- | :---- | :---- | :---- |
-| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) | Client code for each pattern |
-| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | `console` functions only in client code |
+| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) | Client code with output for each pattern |
+| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | `console` functions only in the client code |
 | [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | PlantUML diagram for each pattern |
-| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in client code marked in UML |
+| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in the client code marked in UML |
 | [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | Classes/interfaces from one pattern in one folder |
 | | [Proxy](#proxy) | [State](#state) | Almost all classes/interfaces in separated files |
 | | | [Strategy](#strategy) | Angular as ecosystem (easy to launch and test) |
