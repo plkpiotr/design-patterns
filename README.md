@@ -6,9 +6,9 @@
 | [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | `console` functions used only in the client code |
 | [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | PlantUML diagram created for each design pattern |
 | [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in the client code marked in diagrams |
-| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | All classes/interfaces from one pattern in one directory |
+| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | All classes/interfaces from one pattern in one folder |
 | | [Proxy](#proxy) | [State](#state) | Almost all classes/interfaces placed in separated files |
-| | | [Strategy](#strategy) | Angular used as ecosystem - easy to launch and to test |
+| | | [Strategy](#strategy) | Angular used as ecosystem - easy to launch and test |
 | | | [Template method](#template-method) | All design patterns presented in `AppComponent` |
    
 ---
