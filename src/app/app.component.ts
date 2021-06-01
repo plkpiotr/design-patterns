@@ -44,6 +44,8 @@ import { LiquidState, SolidState } from './behavioral/state/states.class';
 import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
 import { MexicanPizza } from './behavioral/template-method/mexican-pizza.class';
 import { HawaiianPizza } from './behavioral/template-method/hawaiian-pizza.class';
+import { LessThan } from './behavioral/specification/lower-than.class';
+import { GreaterThan } from './behavioral/specification/greater-than.class';
 
 @Component({
   selector: 'app-root',
@@ -265,7 +267,18 @@ export class AppComponent {
   }
 
   private static presentSpecification(): void {
+    const firstSpecification = new GreaterThan(2);
+    console.error(firstSpecification.isSatisfiedBy(3)); // true
+    console.error(firstSpecification.isSatisfiedBy(5)); // true
 
+    const secondSpecification = new LessThan(4);
+    const thirdSpecification = firstSpecification.and(secondSpecification);
+    console.error(thirdSpecification.isSatisfiedBy(3)); // true
+    console.error(thirdSpecification.isSatisfiedBy(5)); // false
+
+    const fourSpecification = thirdSpecification.not();
+    console.error(fourSpecification.isSatisfiedBy(3)); // false
+    console.error(fourSpecification.isSatisfiedBy(5)); // true
   }
 
   private static presentState(): void {

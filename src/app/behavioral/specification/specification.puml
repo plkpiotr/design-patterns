@@ -6,4 +6,54 @@ skinparam class {
   borderColor firebrick
 }
 
+package specs.class.ts {
+  abstract class Spec
+  class AndSpec
+  class OrSpec
+  class NotSpec
+}
+
+abstract class Spec {
+  + {abstract} isSatisfiedBy(value: number): boolean
+  + and(spec: Spec): Spec
+  + or(spec: Spec): Spec
+  + not(): Spec
+}
+
+class AndSpec {
+  - leftSpec: Spec
+  - rightSpec: Spec
+  constructor(leftSpec: Spec, rightSpec: Spec)
+  + isSatisfiedBy(value: number): boolean
+}
+
+class OrSpec {
+  - leftSpec: Spec
+  - rightSpec: Spec
+  constructor(leftSpec: Spec, rightSpec: Spec)
+  + isSatisfiedBy(value: number): boolean
+}
+
+class NotSpec {
+  - spec: Spec
+  constructor(spec: Spec)
+  + isSatisfiedBy(value: number): boolean
+}
+
+class GreaterThan <OR> {
+  - value: number
+  + isSatisfiedBy(value: number): boolean
+}
+
+class LowerThan <OR> {
+  - value: number
+  + isSatisfiedBy(value: number): boolean
+}
+
+GreaterThan --|> Spec
+LowerThan --|> Spec
+Spec <|-- AndSpec
+Spec <|-- OrSpec
+Spec <|-- NotSpec
+
 @enduml

@@ -354,16 +354,27 @@ console.log(sameKing.showKingName()); // "Louis XX"
 
 ## <a name="specification">Specification</a> [behavioral] [&#8657;](#list)
 
-None
+Specification allows you to combine business logic with boolean logic.
 
 #### UML diagram:
 
-![specification](localhost:4200)
+![specification](https://user-images.githubusercontent.com/21959354/120378101-4d679000-c31e-11eb-8023-15648d504531.png)
 
 #### Client code:
 
 ```ts
+const firstSpecification = new GreaterThan(2);
+console.error(firstSpecification.isSatisfiedBy(3)); // true
+console.error(firstSpecification.isSatisfiedBy(5)); // true
 
+const secondSpecification = new LessThan(4);
+const thirdSpecification = firstSpecification.and(secondSpecification);
+console.error(thirdSpecification.isSatisfiedBy(3)); // true
+console.error(thirdSpecification.isSatisfiedBy(5)); // false
+
+const fourSpecification = thirdSpecification.not();
+console.error(fourSpecification.isSatisfiedBy(3)); // false
+console.error(fourSpecification.isSatisfiedBy(5)); // true
 ```
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)

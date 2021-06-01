@@ -45,6 +45,8 @@ import { HydrogenOxide } from './behavioral/state/hydrogen-oxide.class';
 import { LiquidState, SolidState } from './behavioral/state/states.class';
 import { HawaiianPizza } from './behavioral/template-method/hawaiian-pizza.class';
 import { MexicanPizza } from './behavioral/template-method/mexican-pizza.class';
+import { GreaterThan } from './behavioral/specification/greater-than.class';
+import { LessThan } from './behavioral/specification/lower-than.class';
 
 describe('AppComponent', () => {
   const title = 'Results of design patterns are visible in the browser console 😊';
@@ -298,7 +300,18 @@ describe('Behavioral patterns', () => {
   });
 
   it('should test specification', () => {
+    const firstSpecification = new GreaterThan(2);
+    expect(firstSpecification.isSatisfiedBy(3)).toEqual(true);
+    expect(firstSpecification.isSatisfiedBy(5)).toEqual(true);
 
+    const secondSpecification = new LessThan(4);
+    const thirdSpecification = firstSpecification.and(secondSpecification);
+    expect(thirdSpecification.isSatisfiedBy(3)).toEqual(true);
+    expect(thirdSpecification.isSatisfiedBy(5)).toEqual(false);
+
+    const fourSpecification = thirdSpecification.not();
+    expect(fourSpecification.isSatisfiedBy(3)).toEqual(false);
+    expect(fourSpecification.isSatisfiedBy(5)).toEqual(true);
   });
 
   it('should test state', () => {
