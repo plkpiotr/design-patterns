@@ -2,14 +2,14 @@
 
 | ⬜ Creational | 🟨 Structural | 🟥 Behavioral | Assumption: |
 | :---- | :---- | :---- | :---- |
-| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) | Client code for each design pattern |
-| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | `console` functions used only in the client code |
-| [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | PlantUML diagram created for each design pattern |
-| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in the client code marked in diagrams |
-| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | All classes/interfaces from one pattern in one folder |
+| [Abstract factory](#abstract-factory) | [Adapter](#adapter) | [Chain of responsibility](#chain-of-responsibility) | Client code for each pattern |
+| [Builder](#builder) | [Bridge](#bridge)  | [Command](#command) | `console` functions only in client code |
+| [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | PlantUML diagram for each pattern |
+| [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in client code marked in UML |
+| [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | Classes/interfaces from one pattern in one folder |
 | | [Proxy](#proxy) | [State](#state) | Almost all classes/interfaces in separated files |
-| | | [Strategy](#strategy) | Angular used as ecosystem (easy to launch and test) |
-| | | [Template method](#template-method) | All design patterns presented in `AppComponent` |
+| | | [Strategy](#strategy) | Angular as ecosystem (easy to launch and test) |
+| | | [Template method](#template-method) | All patterns presented in `AppComponent` |
    
 ---
 
