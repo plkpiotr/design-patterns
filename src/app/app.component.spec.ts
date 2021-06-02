@@ -309,9 +309,9 @@ describe('Behavioral patterns', () => {
     expect(thirdSpecification.isSatisfiedBy(3)).toEqual(true);
     expect(thirdSpecification.isSatisfiedBy(5)).toEqual(false);
 
-    const fourSpecification = thirdSpecification.not();
-    expect(fourSpecification.isSatisfiedBy(3)).toEqual(false);
-    expect(fourSpecification.isSatisfiedBy(5)).toEqual(true);
+    const fourthSpecification = thirdSpecification.not();
+    expect(fourthSpecification.isSatisfiedBy(3)).toEqual(false);
+    expect(fourthSpecification.isSatisfiedBy(5)).toEqual(true);
   });
 
   it('should test state', () => {

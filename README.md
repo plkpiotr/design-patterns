@@ -372,9 +372,9 @@ const thirdSpecification = firstSpecification.and(secondSpecification);
 console.error(thirdSpecification.isSatisfiedBy(3)); // true
 console.error(thirdSpecification.isSatisfiedBy(5)); // false
 
-const fourSpecification = thirdSpecification.not();
-console.error(fourSpecification.isSatisfiedBy(3)); // false
-console.error(fourSpecification.isSatisfiedBy(5)); // true
+const fourthSpecification = thirdSpecification.not();
+console.error(fourthSpecification.isSatisfiedBy(3)); // false
+console.error(fourthSpecification.isSatisfiedBy(5)); // true
 ```
 
 ## <a name="state">State</a> [behavioral] [&#8657;](#list)
