@@ -7,7 +7,7 @@
 | [Factory method](#factory-method) | [Composite](#composite) | [Mediator](#mediator) | PlantUML diagram for each pattern |
 | [Fluent interface](#fluent-interface) | [Decorator](#decorator) | [Observer](#observer) | Classes used in the client code marked in UML |
 | [Singleton](#singleton) | [Facade](#facade) | [Specification](#specification) | Classes/interfaces from one pattern in one folder |
-| | [Proxy](#proxy) | [State](#state) | Almost all classes/interfaces in separated files |
+| | [Proxy](#proxy) | [State](#state) | Almost all classes/interfaces in separate files |
 | | | [Strategy](#strategy) | Angular as ecosystem (easy to launch and test) |
 | | | [Template method](#template-method) | All patterns presented in `AppComponent` |
    
@@ -403,7 +403,7 @@ console.error(hydrogenOxide.showName()); // "H2O"
 
 ## <a name="strategy">Strategy</a> [behavioral] [&#8657;](#list)
 
-Strategy allows you to define a family of algorithms encapsulating them in the form of separated classes.
+Strategy allows you to define a family of algorithms encapsulating them in the form of separate classes.
 
 #### UML diagram:
 
