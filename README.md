@@ -19,7 +19,7 @@ Abstract factory allows you to create related objects without specifying them co
 
 #### UML diagram:
 
-![abstract-factory](https://user-images.githubusercontent.com/21959354/117216441-0f9b4880-ae00-11eb-9c6d-124a2d7d4192.png)
+<img width="821" height="367" alt="Image" src="https://github.com/user-attachments/assets/889cab6e-6160-4520-aba1-889f0f5e81cd" />
 
 #### Client code:
 
