@@ -30,7 +30,7 @@ class RetroChair {
 }
 
 class ModernChair {
-  + public showOffer(): string
+  + showOffer(): string
 }
 
 interface Table {
